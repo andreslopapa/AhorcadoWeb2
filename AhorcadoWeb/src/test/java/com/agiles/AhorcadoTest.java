@@ -17,7 +17,7 @@ public class AhorcadoTest {
 		assertEquals("h", letra);
 	}
 	
-//asd
+//asds
 	
 	@Test
 	public void juegoGanado() {
