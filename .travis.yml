@@ -1,5 +1,2 @@
 language: java
-<<<<<<< HEAD
-=======
-before_script: cd AhorcadoWeb
->>>>>>> ef0421b4591313c8a8638362c949e1b1ce599331
+
