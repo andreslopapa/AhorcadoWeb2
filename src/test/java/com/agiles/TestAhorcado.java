@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class AhorcadoTest {
+public class TestAhorcado {
 	
 	@Test
 	public void ingresarUnaSolaLetra() {
