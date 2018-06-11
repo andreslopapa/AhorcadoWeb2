@@ -62,7 +62,7 @@ public class Ahorcado {
 		//int letrasBienAnterior;
 		
 		for(char letraIngresada : letrasIngresadas) {
-			/* letrasBienAnterior = 0;
+			/* letrasBienAnterior = 0;;
 			
 			for(char letraPalabra : palabra) {
 				if(letraIngresada == letraPalabra) {
