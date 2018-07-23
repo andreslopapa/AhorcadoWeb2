@@ -31,9 +31,7 @@ public class Ahorcado {
 		palabraActual = seleccionada.getPalabra();
 	}
 	
-	public static void main(String [] args) {
-		System.out.println("Hello world");
-	}
+	
 	
 	public void ingresarLetra(char letra) {
 		letrasIngresadas[cantidadLetrasIngresadas] = letra;
