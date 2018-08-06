@@ -1,4 +1,7 @@
 <html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/inicio.css">
+</head>
 <body>
 <h1>Jugar ahorcado web</h1>
 
