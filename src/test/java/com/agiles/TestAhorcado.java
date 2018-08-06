@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import com.agiles.controladores.Ahorcado;
+
 public class TestAhorcado {
 	
 	@Test
@@ -16,10 +18,6 @@ public class TestAhorcado {
 		
 		assertEquals("h", letra);
 	}
-	
-	
-	
-	//asdasdasdasd
 	
 	@Test
 	public void juegoGanado() {
@@ -48,21 +46,6 @@ public class TestAhorcado {
 		
 		assertEquals(false, ganador);
 	} 
-	
-	/* @Test
-	void juegoGanadoConCincoLetras() {
-		Ahorcado ahorcado = new Ahorcado();
-		
-		ahorcado.ingresarLetra('h');
-		ahorcado.ingresarLetra('p');
-		ahorcado.ingresarLetra('l');
-		ahorcado.ingresarLetra('a');
-		ahorcado.ingresarLetra('o');
-		
-		boolean ganador = ahorcado.isGanador();
-		
-		assertEquals(true, ganador);
-	}  */
 	
 	@Test
 	public void juegoGanadoConCincoLetras() {

@@ -7,9 +7,12 @@ import static com.codeborne.selenide.Condition.*;
 public class UITestAhorcado {
 
 	@Test
-	public void indexInitialTest() {
+	public void ingresarUnaSolaLetra() {
 		open("/AhorcadoWeb/");
 		
-		$("h2").shouldHave(text("Andres Manda Papa!"));
+		 $("#letraInput").setValue("h");
+		 $("#submit").click();
+		 
+		 $("#letrasUsadas").shouldHave(text("h"));
 	}
 }

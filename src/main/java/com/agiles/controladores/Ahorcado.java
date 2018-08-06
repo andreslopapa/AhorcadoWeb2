@@ -1,6 +1,8 @@
-package com.agiles;
+package com.agiles.controladores;
 
 import java.util.ArrayList;
+
+import com.agiles.modelos.Palabra;
 
 public class Ahorcado {
 	private ArrayList<Palabra> palabras;

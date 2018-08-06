@@ -1,4 +1,4 @@
-package com.agiles;
+package com.agiles.modelos;
 
 public class Palabra {
 	private char[] letras;
