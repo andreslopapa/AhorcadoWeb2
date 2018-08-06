@@ -31,9 +31,7 @@ public class Ahorcado {
 		palabraActual = seleccionada.getPalabra();
 	}
 	
-	public static void main(String [] args) {
-		System.out.println("Hello world");
-	}
+	
 	
 	public void ingresarLetra(char letra) {
 		letrasIngresadas[cantidadLetrasIngresadas] = letra;
@@ -62,7 +60,7 @@ public class Ahorcado {
 		//int letrasBienAnterior;
 		
 		for(char letraIngresada : letrasIngresadas) {
-			/* letrasBienAnterior = 0;
+			/* letrasBienAnterior = 0;;
 			
 			for(char letraPalabra : palabra) {
 				if(letraIngresada == letraPalabra) {
