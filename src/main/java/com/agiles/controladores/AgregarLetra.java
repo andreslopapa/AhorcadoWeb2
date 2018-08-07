@@ -37,15 +37,19 @@ public class AgregarLetra extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		
-		String letrasUsadas = "";
-		if(session.getAttribute("letrasUsadas") != null) {
-			letrasUsadas = (String)session.getAttribute("letrasUsadas") + request.getParameter("letraInput");
+		Ahorcado juego;
+		if(session.getAttribute("juego") != null) {
+			juego = (Ahorcado)session.getAttribute("juego");
 		} else {
-			letrasUsadas = (String)request.getParameter("letraInput");
+			juego = new Ahorcado();
 		}
 		
-		session.setAttribute("letrasUsadas", letrasUsadas);
-		request.setAttribute("letrasUsadas", letrasUsadas);
+		String letra = (String)request.getParameter("letraInput");
+		juego.ingresarLetra(letra.charAt(0));
+		
+		session.setAttribute("juego", juego);
+		
+		request.setAttribute("letrasUsadas", juego.getLetrasUsadas());
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
         dispatcher.forward(request, response);
