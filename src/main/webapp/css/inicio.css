@@ -23,6 +23,7 @@ body{
 	height:60px;
 	overflow:hidden;
 	margin:auto;
+	margin-bottom:8px;
 }
 
 .alphabet {
@@ -61,7 +62,7 @@ body{
 	border-bottom:1px solid red;
 }
 
-.alphabet li:hover {
+.alphabet a:hover {
     color:red;
     background-color: lightgray;
 }
@@ -69,4 +70,31 @@ body{
 .alphabet a{
 	color:white;
 	text-decoration:none;
+	display:block;
+}
+
+.reiniciar{
+	color:green;
+}
+
+a.reiniciar:hover{
+	color:red;
+}
+
+#letrasUsadas{
+	color:red;
+}
+.letras-palabra{
+	color:#0377af;
+}
+
+.errores, .errorestit,.letrasUsadasTit,.letras-palabra{
+	font-family:"Courier New";
+	font-weight: bolder;
+	
+}
+
+.errores{
+	color:red;
+	font-size:20px;
 }

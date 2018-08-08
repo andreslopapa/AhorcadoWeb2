@@ -7,7 +7,7 @@ import com.agiles.modelos.Palabra;
 public class Ahorcado {
 	private ArrayList<Palabra> palabras;
 	private char[] palabraActual;
-	private char[] letrasIngresadas = new char[4];
+	private char[] letrasIngresadas;
 	private int cantidadLetrasIngresadas;
 	private int erroresRestantes;
 	
@@ -18,6 +18,7 @@ public class Ahorcado {
 		palabras = new ArrayList<Palabra>();
 		palabras.add(new Palabra("hola"));
 		seleccionarPalabra("hola");
+		letrasIngresadas = new char[palabraActual.length+erroresRestantes];
 	}
 	
 	public void seleccionarPalabra(String palabraSeleccionada) {
@@ -36,6 +37,13 @@ public class Ahorcado {
 	
 	
 	public void ingresarLetra(char letra) {
+		
+		for(char letraI:letrasIngresadas){
+			if(letraI==letra){
+				return;
+				/*para verificar que no este ya*/
+			}
+		}
 		letrasIngresadas[cantidadLetrasIngresadas] = letra;
 		cantidadLetrasIngresadas++;
 		
@@ -63,20 +71,20 @@ public class Ahorcado {
 		
 		for(char letraIngresada : letrasIngresadas) {
 			/* letrasBienAnterior = 0;;
-			
-			for(char letraPalabra : palabra) {
+			*/
+			for(char letraPalabra : palabraActual) {
 				if(letraIngresada == letraPalabra) {
 					letrasBien++;
 				}
-			} */
-			
-			
-			if(palabraActual[letrasBien] == letraIngresada) {
-				letrasBien++;
 			} 
+			
+			
+//			if(palabraActual[letrasBien] == letraIngresada) {
+//				letrasBien++;
+//			} 
 		}
 		
-		if(letrasBien == palabraActual.length && erroresRestantes > 0) {
+		if(letrasBien >= palabraActual.length && erroresRestantes > 0) {
 			return true;
 		} 
 		
@@ -108,9 +116,9 @@ public class Ahorcado {
 			} 
 			
 			if(letraExiste) {
-				palabraMostrar += letraPalabra;
+				palabraMostrar += letraPalabra+" ";
 			} else {
-				palabraMostrar += "_";
+				palabraMostrar += "_ ";
 			}
 		}
 		
@@ -129,6 +137,10 @@ public class Ahorcado {
 	
 	public void addPalabra(String palabra) {
 		palabras.add(new Palabra(palabra));
+		letrasIngresadas = new char[palabra.length()+erroresRestantes];
 	}
 	
+	public String getPalabraActual(){
+		return new String(this.palabraActual);
+	}
 }

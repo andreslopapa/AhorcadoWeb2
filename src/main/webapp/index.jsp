@@ -1,17 +1,43 @@
+<%@page import="com.agiles.controladores.Ahorcado"%>
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="css/inicio.css">
 </head>
 <body>
 	<div class="container">
 		<h1>Jugar ahorcado web</h1>
 		<div class="crop-img"  >
-			<img src="images/playhangman1.png" alt="hangman" class="hangman">
+			<img src=<%=request.getAttribute("urlHangman")==null?"images/playhangman1.png":request.getAttribute("urlHangman") %> alt="hangman" class="hangman">
 		</div>
+		
 		<div>
+		<span class="letras-palabra"><%=request.getAttribute("letrasPalabra")==null?new Ahorcado().mostrarPalabra():request.getAttribute("letrasPalabra") %></span>
 		<br>
-		Letras usadas 
+		<br>
+		<%if(request.getAttribute("ganador")!=null && (Boolean)request.getAttribute("ganador")==true){ %>
+		<h1>
+		Te salvaste Perro!
+		<br>
+		<br>
+		</h1>
+		<%}else if(request.getAttribute("perdedor")!=null && (Boolean)request.getAttribute("perdedor")==true){ %>
+		<h1>
+		Perdiste Perro!
+		</h1>
+		<br>
+		La palabra era:<%=" "+((Ahorcado)request.getSession().getAttribute("juego")).getPalabraActual() %>
+		<br>
+		<br>
+		<%}else{ %>
+		<span class="letrasUsadasTit">Letras usadas</span>
+		<br> 
 		<span id="letrasUsadas"><%= request.getAttribute("letrasUsadas")==null?"":request.getAttribute("letrasUsadas")%></span>
+		<br>
+		<br>
+		<span class="errorestit">Errores Restantes:</span><span class="errores"><%=request.getAttribute("errores")==null?new Ahorcado().getErroresRestantes():request.getAttribute("errores") %></span>
+		
+		<br>
 		<br>
 		</div>
 		
@@ -38,7 +64,7 @@
                         <li><a id="letterl" href="/AhorcadoWeb/AgregarLetra?letraInput=l">L</a></li>
                         <li><a id="letterm" href="/AhorcadoWeb/AgregarLetra?letraInput=m">M</a></li>
                         <li><a id="lettern" href="/AhorcadoWeb/AgregarLetra?letraInput=n">N</a></li>
-                        <li><a id="letterñ" href="/AhorcadoWeb/AgregarLetra?letraInput=ñ">Ñ</a></li>
+                        <li><a id="letterñ" href="/AhorcadoWeb/AgregarLetra?letraInput=enie">Ñ</a></li>
                         <li><a id="lettero" href="/AhorcadoWeb/AgregarLetra?letraInput=o">O</a></li>
                         <li><a id="letterp" href="/AhorcadoWeb/AgregarLetra?letraInput=p">P</a></li>
                         <li><a id="letterq" href="/AhorcadoWeb/AgregarLetra?letraInput=q">Q</a></li>
@@ -55,7 +81,8 @@
                         <li><a id="letterz" href="/AhorcadoWeb/AgregarLetra?letraInput=z">Z</a></li>
        </ul>
        <br> 
-	   <a href="/AhorcadoWeb/RestartGame">Reiniciar juego</a>
+       <%} %>
+	   <a class="reiniciar" href="/AhorcadoWeb/RestartGame">Reiniciar juego</a>
 	</div>	
 </body>
 </html>

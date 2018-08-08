@@ -26,8 +26,8 @@ public class AgregarLetra extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		
 		Ahorcado juego;
+		String imgHangman="images/playhangman1.png";
 		if(session.getAttribute("juego") != null) {
 			juego = (Ahorcado)session.getAttribute("juego");
 		} else {
@@ -36,14 +36,38 @@ public class AgregarLetra extends HttpServlet {
 		}
 		
 		String letra = (String)request.getParameter("letraInput");
-		if(letra.isEmpty()||letra==null){
-			letra="";
-		}else{
+		if(!(letra.isEmpty()||letra==null)){
+			if(letra.equals("enie")){
+				letra="ñ";
+			}
 			juego.ingresarLetra(letra.charAt(0));
 			
 		}
+		switch(juego.getErroresRestantes()){
+		case 4:imgHangman="images/playhangman1.png";break;
+		case 3:imgHangman="images/playhangman2.png";break;
+		case 2:imgHangman="images/playhangman3.png";break;
+		case 1:imgHangman="images/playhangman4.png";break;
+		case 0:imgHangman="images/playhangman5.png";break;
+		case -1:imgHangman="images/playhangman6.png";break;
+	
+		}
+		
+		if(juego.isGanador()){
+			request.setAttribute("ganador", true);
+			
+		}
+		else if(juego.getErroresRestantes()<0){
+			request.setAttribute("perdedor", true);
+			
+		}else{
+			request.setAttribute("letrasUsadas", juego.getLetrasUsadas());
+			request.setAttribute("errores", juego.getErroresRestantes());
+		}
+		request.setAttribute("letrasPalabra", juego.mostrarPalabra());
+		request.setAttribute("urlHangman", imgHangman);
 		session.setAttribute("juego", juego);
-		request.setAttribute("letrasUsadas", juego.getLetrasUsadas());
+		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
         dispatcher.forward(request, response);
 	}

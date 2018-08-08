@@ -37,14 +37,15 @@ public class TestAhorcado {
 	public void juegoPerdido() {
 		Ahorcado ahorcado = new Ahorcado();
 		
-		ahorcado.ingresarLetra('h');
-		ahorcado.ingresarLetra('a');
-		ahorcado.ingresarLetra('l');
-		ahorcado.ingresarLetra('a');
+		ahorcado.ingresarLetra('c');
+		ahorcado.ingresarLetra('x');
+		ahorcado.ingresarLetra('g');
+		ahorcado.ingresarLetra('r');
+		ahorcado.ingresarLetra('t');
 		
-		boolean ganador = ahorcado.isGanador();
+		boolean ganador = ahorcado.getErroresRestantes()<0;
 		
-		assertEquals(false, ganador);
+		assertEquals(false, !ganador);
 	} 
 	
 	@Test
@@ -97,7 +98,7 @@ public class TestAhorcado {
 		
 		String mostrado = ahorcado.mostrarPalabra();
 		
-		assertEquals("h_l_", mostrado);
+		assertEquals("h _ l _ ", mostrado);
 	}
 
 
