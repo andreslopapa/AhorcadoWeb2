@@ -9,31 +9,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- * Servlet implementation class AgregarLetra
- */
+
 public class AgregarLetra extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+  
     public AgregarLetra() {
         super();
-        // TODO Auto-generated constructor stub
+       
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Hello");
+		doPost(request,response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		
@@ -42,15 +32,18 @@ public class AgregarLetra extends HttpServlet {
 			juego = (Ahorcado)session.getAttribute("juego");
 		} else {
 			juego = new Ahorcado();
+			
 		}
 		
 		String letra = (String)request.getParameter("letraInput");
-		juego.ingresarLetra(letra.charAt(0));
-		
+		if(letra.isEmpty()||letra==null){
+			letra="";
+		}else{
+			juego.ingresarLetra(letra.charAt(0));
+			
+		}
 		session.setAttribute("juego", juego);
-		
 		request.setAttribute("letrasUsadas", juego.getLetrasUsadas());
-		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
         dispatcher.forward(request, response);
 	}
