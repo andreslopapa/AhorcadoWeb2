@@ -53,23 +53,28 @@ public class AgregarLetra extends HttpServlet {
 	
 		}
 		
+		request.setAttribute("letrasPalabra", juego.mostrarPalabra());
+		request.setAttribute("urlHangman", imgHangman);
 		if(juego.isGanador()){
 			request.setAttribute("ganador", true);
+			juego=null;
 			
 		}
 		else if(juego.getErroresRestantes()<0){
 			request.setAttribute("perdedor", true);
+			request.setAttribute("palabraera", juego.getPalabraActual());
+			juego=null;
 			
 		}else{
 			request.setAttribute("letrasUsadas", juego.getLetrasUsadas());
 			request.setAttribute("errores", juego.getErroresRestantes());
 		}
-		request.setAttribute("letrasPalabra", juego.mostrarPalabra());
-		request.setAttribute("urlHangman", imgHangman);
+		
 		session.setAttribute("juego", juego);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
         dispatcher.forward(request, response);
 	}
+	
 
 }

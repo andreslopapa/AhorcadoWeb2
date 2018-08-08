@@ -25,6 +25,9 @@ body{
 	margin:auto;
 	margin-bottom:8px;
 }
+.ganador-section,.perdedor-section,.alphabets{
+	margin:auto auto 0;
+}
 
 .alphabet {
 	display:block;

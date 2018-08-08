@@ -52,13 +52,17 @@ public class TestAhorcado {
 	public void juegoGanadoConCincoLetras() {
 		Ahorcado ahorcado = new Ahorcado();
 		
-		ahorcado.ingresarLetra('p');
+		ahorcado.ingresarLetra('h');
 		ahorcado.ingresarLetra('j');
-		ahorcado.ingresarLetra('n');
+		ahorcado.ingresarLetra('o');
+		ahorcado.ingresarLetra('l');
+		ahorcado.ingresarLetra('a');
 		
 		int errores = ahorcado.getErroresRestantes();
+		boolean ganador = ahorcado.isGanador();
 		
-		assertEquals(1, errores);
+		assertEquals(true, ganador);
+		assertEquals(3, errores);
 	}  
 	
 	@Test
