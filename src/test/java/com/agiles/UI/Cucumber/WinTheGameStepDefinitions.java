@@ -13,33 +13,17 @@ public class WinTheGameStepDefinitions {
 	public void an_open_browser_with_AhorcadoWeb_index_jsp() throws Throwable {
 		Configuration.browser = "chrome";
 	    Configuration.startMaximized = false;
-	    open("/AhorcadoWeb");
+	    open("http://localhost:8080/AhorcadoWeb/index.jsp");
 	}
 	
 	@When("^I click the letter \"([^\"]*)\"$")
 	public void i_click_the_letter(String letter) throws Throwable {
+		if(letter.equals("ñ")){
+			letter="enie";
+		}
 		$("#letter"+letter).click();
 	}
 	
-//	@When("^I click the letter h$")
-//	public void i_click_the_letter_h() throws Throwable {
-//		$("#letterh").click();
-//	}
-//
-//	@When("^I click the letter l$")
-//	public void i_click_the_letter_l() throws Throwable {
-//		$("#letterl").click();
-//	}
-//
-//	@When("^I click the letter o$")
-//	public void i_click_the_letter_o() throws Throwable {
-//		$("#lettero").click();
-//	}
-//
-//	@When("^I click the letter a$")
-//	public void i_click_the_letter_a() throws Throwable {
-//		$("#lettera").click();
-//	}
 
 	@Then("^a message saying \"([^\"]*)\" should appear$")
 	public void a_message_saying_should_appear(String winTit) throws Throwable {
