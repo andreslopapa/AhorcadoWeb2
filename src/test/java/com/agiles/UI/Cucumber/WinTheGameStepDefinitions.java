@@ -9,8 +9,11 @@ import static com.codeborne.selenide.Selenide.*;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriver.Options;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static com.codeborne.selenide.Condition.*;
 
@@ -38,6 +41,8 @@ public class WinTheGameStepDefinitions {
 		System.setProperty("selenide.browser", "Chrome");
         
 	    open("/AhorcadoWeb/index.jsp");
+
+		Thread.sleep(5000);
 	}
 	
 	@When("^I click the letter \"([^\"]*)\"$")
@@ -46,6 +51,9 @@ public class WinTheGameStepDefinitions {
 			letter="enie";
 		}
 		$("#letter"+letter).click();
+//		WebElement addTrainer = (new WebDriverWait(WebDriver.class.newInstance(), 10)).until(ExpectedConditions.elementToBeClickable($("#letter"+letter)));
+//		addTrainer.click();
+
 	}
 	
 
