@@ -34,7 +34,8 @@ public class WinTheGameStepDefinitions {
 //		options.addArguments("--no-sandbox"); // Bypass OS security model
 //		WebDriver driver = new ChromeDriver(options);
 //		driver.get("/AhorcadoWeb/index.jsp");
-	   
+//		System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
+		System.setProperty("selenide.browser", "Chrome");
         
 	    open("/AhorcadoWeb/index.jsp");
 	}
