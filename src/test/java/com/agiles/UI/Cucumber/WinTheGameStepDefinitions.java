@@ -42,7 +42,7 @@ public class WinTheGameStepDefinitions {
         
 	    open("/AhorcadoWeb/index.jsp");
 
-		Thread.sleep(5000);
+		Thread.sleep(10000);
 	}
 	
 	@When("^I click the letter \"([^\"]*)\"$")
