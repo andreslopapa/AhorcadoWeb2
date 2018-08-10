@@ -1,7 +1,5 @@
 language: java
 
-script: phantomjs testrunner.js
-
 
 after_success:
   - mvn clean test jacoco:report coveralls:report
