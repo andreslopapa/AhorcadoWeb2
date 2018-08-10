@@ -6,14 +6,24 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import static com.codeborne.selenide.Selenide.*;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
 import static com.codeborne.selenide.Condition.*;
 
 public class WinTheGameStepDefinitions {
 	@Given("^an open browser with AhorcadoWeb/index\\.jsp$")
 	public void an_open_browser_with_AhorcadoWeb_index_jsp() throws Throwable {
+		ChromeOptions options = new ChromeOptions();
+        options.addArguments("--no-sandbox");
+        WebDriver browser = new ChromeDriver(options);
+        
 		Configuration.browser = "chrome";
 	    Configuration.startMaximized = false;
-	    open("http://localhost:8080/AhorcadoWeb/index.jsp");
+        
+	    browser.get("http://localhost:8080/AhorcadoWeb/index.jsp");
 	}
 	
 	@When("^I click the letter \"([^\"]*)\"$")
