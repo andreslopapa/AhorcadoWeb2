@@ -82,8 +82,8 @@ public class UITestAhorcado {
 	
 	
 	public void preparePage(){
-		System.setProperty("selenide.browser", "chrome");
-		open("/AhorcadoWeb");
+//		System.setProperty("selenide.browser", "chrome");
+		open("/AhorcadoWeb/index.jsp");
 	}
 }
 
