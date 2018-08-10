@@ -1,4 +1,4 @@
-package com.agiles.controladores;
+package com.agiles.servlets;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

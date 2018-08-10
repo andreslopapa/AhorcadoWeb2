@@ -7,13 +7,13 @@
 		<servlet-name>AgregarLetra</servlet-name>
 		<display-name>AgregarLetra</display-name>
 		<description></description>
-		<servlet-class>com.agiles.controladores.AgregarLetra</servlet-class>
+		<servlet-class>com.agiles.servlets.AgregarLetra</servlet-class>
 	</servlet>
 	<servlet>
 		<servlet-name>RestartGame</servlet-name>
 		<display-name>RestartGame</display-name>
 		<description></description>
-		<servlet-class>com.agiles.controladores.RestartGame</servlet-class>
+		<servlet-class>com.agiles.servlets.RestartGame</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>AgregarLetra</servlet-name>

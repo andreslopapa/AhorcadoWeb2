@@ -1,4 +1,4 @@
-package com.agiles.controladores;
+package com.agiles.servlets;
 
 import java.io.IOException;
 
@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.agiles.controladores.Ahorcado;
 
 
 public class AgregarLetra extends HttpServlet {

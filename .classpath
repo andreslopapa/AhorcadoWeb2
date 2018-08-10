@@ -29,13 +29,5 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/media/lopa/DATOS/UNIVERSIDAD/5to Año/Metodologias Agiles/seleniumSpecFlow/cucumberJars/cobertura-2.1.1.jar"/>
-	<classpathentry kind="lib" path="/media/lopa/DATOS/UNIVERSIDAD/5to Año/Metodologias Agiles/seleniumSpecFlow/cucumberJars/cucumber-core-1.2.5.jar"/>
-	<classpathentry kind="lib" path="/media/lopa/DATOS/UNIVERSIDAD/5to Año/Metodologias Agiles/seleniumSpecFlow/cucumberJars/cucumber-java-1.2.5.jar"/>
-	<classpathentry kind="lib" path="/media/lopa/DATOS/UNIVERSIDAD/5to Año/Metodologias Agiles/seleniumSpecFlow/cucumberJars/cucumber-junit-1.2.5.jar"/>
-	<classpathentry kind="lib" path="/media/lopa/DATOS/UNIVERSIDAD/5to Año/Metodologias Agiles/seleniumSpecFlow/cucumberJars/cucumber-jvm-deps-1.0.5.jar"/>
-	<classpathentry kind="lib" path="/media/lopa/DATOS/UNIVERSIDAD/5to Año/Metodologias Agiles/seleniumSpecFlow/cucumberJars/cucumber-reporting-3.19.0.jar"/>
-	<classpathentry kind="lib" path="/media/lopa/DATOS/UNIVERSIDAD/5to Año/Metodologias Agiles/seleniumSpecFlow/cucumberJars/gherkin-2.12.2.jar"/>
-	<classpathentry kind="lib" path="/media/lopa/DATOS/UNIVERSIDAD/5to Año/Metodologias Agiles/seleniumSpecFlow/cucumberJars/mockito-all-2.0.2-beta.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

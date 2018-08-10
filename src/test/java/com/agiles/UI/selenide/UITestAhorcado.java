@@ -1,4 +1,4 @@
-package com.agiles;
+package com.agiles.UI.selenide;
 
 import org.junit.Test;
 import static com.codeborne.selenide.Selenide.*;

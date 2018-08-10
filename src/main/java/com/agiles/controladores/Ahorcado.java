@@ -66,25 +66,52 @@ public class Ahorcado {
 	}
 	
 	public boolean isGanador() {
-		int letrasBien = 0;
-		//int letrasBienAnterior;
 		
+		
+		/*contar caracteres diferentes*/
+		char[] letrasRepetidas=new char[palabraActual.length];
+		char[] letrasDiff=new char[palabraActual.length];
+		int cantRep=0;
+		int cantDiff=0;
+		for(int i=0;i<palabraActual.length;++i){
+			boolean repetida=false;
+			for(int j=i+1;j<palabraActual.length;++j){
+				if(palabraActual[i]==palabraActual[j]){
+					repetida=true;
+					boolean esta=false;
+					for(char lr:letrasRepetidas){
+						if(lr==palabraActual[i]){
+							esta=true;
+						}
+					}
+					if(esta){
+						continue;
+					}
+					else{
+						letrasRepetidas[cantRep]=palabraActual[i];
+						++cantRep;
+						letrasDiff[cantDiff]=palabraActual[i];
+						++cantDiff;
+					}
+				}
+			}
+			if(!repetida){
+				letrasDiff[cantDiff]=palabraActual[i];
+				++cantDiff;
+			}
+		}
+		
+		int letrasBien=0;
 		for(char letraIngresada : letrasIngresadas) {
-			/* letrasBienAnterior = 0;;
-			*/
-			for(char letraPalabra : palabraActual) {
+			for(char letraPalabra : letrasDiff) {
 				if(letraIngresada == letraPalabra) {
-					letrasBien++;
+					++letrasBien;
 				}
 			} 
 			
-			
-//			if(palabraActual[letrasBien] == letraIngresada) {
-//				letrasBien++;
-//			} 
 		}
 		
-		if(letrasBien >= palabraActual.length && erroresRestantes > 0) {
+		if(letrasBien >= cantDiff && erroresRestantes >= 0) {
 			return true;
 		} 
 		
