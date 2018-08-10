@@ -16,14 +16,15 @@ import static com.codeborne.selenide.Condition.*;
 public class WinTheGameStepDefinitions {
 	@Given("^an open browser with AhorcadoWeb/index\\.jsp$")
 	public void an_open_browser_with_AhorcadoWeb_index_jsp() throws Throwable {
-		ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox");
-        WebDriver browser = new ChromeDriver(options);
+//		ChromeOptions options = new ChromeOptions();
+//        options.addArguments("--no-sandbox");
+//        System.setProperty("webdriver.chrome.driver","/usr/bin/google-chrome");
+//        WebDriver browser = new ChromeDriver(options);
         
 		Configuration.browser = "chrome";
 	    Configuration.startMaximized = false;
         
-	    browser.get("http://localhost:8080/AhorcadoWeb/index.jsp");
+	    open("/AhorcadoWeb/index.jsp");
 	}
 	
 	@When("^I click the letter \"([^\"]*)\"$")
