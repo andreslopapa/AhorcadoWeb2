@@ -8,6 +8,7 @@ import cucumber.api.java.en.When;
 import static com.codeborne.selenide.Selenide.*;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriver.Options;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
@@ -23,6 +24,8 @@ public class WinTheGameStepDefinitions {
         
 		Configuration.browser = "chrome";
 	    Configuration.startMaximized = false;
+	    
+	   
         
 	    open("/AhorcadoWeb/index.jsp");
 	}

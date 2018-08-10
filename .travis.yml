@@ -1,3 +1,9 @@
 language: java
+
+addons:
+  apt:
+    packages:
+      - google-chrome-stable
+
 after_success:
   - mvn clean test jacoco:report coveralls:report
