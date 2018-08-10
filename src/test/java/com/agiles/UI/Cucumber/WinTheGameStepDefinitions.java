@@ -38,11 +38,13 @@ public class WinTheGameStepDefinitions {
 //		WebDriver driver = new ChromeDriver(options);
 //		driver.get("/AhorcadoWeb/index.jsp");
 //		System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
+		
+		
 		System.setProperty("selenide.browser", "Chrome");
         
 	    open("/AhorcadoWeb/index.jsp");
-
-		Thread.sleep(10000);
+	    Thread.sleep(40000);
+	
 	}
 	
 	@When("^I click the letter \"([^\"]*)\"$")
