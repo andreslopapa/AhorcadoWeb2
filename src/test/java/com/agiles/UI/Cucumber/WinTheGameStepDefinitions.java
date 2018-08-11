@@ -26,7 +26,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 import static com.codeborne.selenide.Condition.*;
-
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 
 
@@ -64,6 +64,7 @@ public class WinTheGameStepDefinitions {
 		
 		System.setProperty("selenide.browser", "Chrome");
 	    open("/AhorcadoWeb/index.jsp");
+	    System.out.println(getWebDriver().getPageSource());
 
 	
 //	    driver = new ChromeDriver();
