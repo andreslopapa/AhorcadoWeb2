@@ -163,6 +163,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
   <build>
+  	<defaultGoal>clean test</defaultGoal>
     <finalName>AhorcadoWeb</finalName>
     <plugins>
         <plugin>
