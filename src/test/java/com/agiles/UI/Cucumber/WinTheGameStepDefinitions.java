@@ -64,7 +64,7 @@ public class WinTheGameStepDefinitions {
 		
 		System.setProperty("selenide.browser", "Chrome");
 	    open("/AhorcadoWeb/index.jsp");
-	    System.out.println(getWebDriver().getPageSource());
+	    System.out.println(getWebDriver().getCurrentUrl());
 
 	
 //	    driver = new ChromeDriver();
