@@ -8,74 +8,7 @@
   <name>AhorcadoWeb Maven Webapp</name>
   <url>http://maven.apache.org</url>
   
-      <profiles>
-        <profile>
-            <id>firefox</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <browser>firefox</browser>
-            </properties>
-        </profile>
-        <profile>
-            <id>chrome</id>
-            <properties>
-                <browser>chrome</browser>
-            </properties>
-        </profile>
-        <profile>
-            <id>phantomjs</id>
-            <properties>
-                <browser>phantomjs</browser>
-            </properties>
-        </profile>
-        <profile>
-            <id>ie</id>
-            <properties>
-                <browser>ie</browser>
-            </properties>
-        </profile>
-        <profile>
-            <id>safari</id>
-            <properties>
-                <browser>safari</browser>
-            </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>org.seleniumhq.selenium</groupId>
-                    <artifactId>selenium-safari-driver</artifactId>
-                    <version>${selenium.version}</version>
-                </dependency>
-            </dependencies>
-        </profile>
-        <profile>
-            <id>htmlunit</id>
-            <properties>
-                <browser>htmlunit</browser>
-            </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>org.seleniumhq.selenium</groupId>
-                    <artifactId>selenium-htmlunit-driver</artifactId>
-                    <version>LATEST</version>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
-        </profile>
-        <profile>
-            <id>ci-server</id>
-            <properties>
-                <surefire.argLine>-Dremote=${selenium.hub.url}</surefire.argLine>
-            </properties>
-        </profile>
-        <profile>
-            <id>local</id>
-            <properties>
-                <holdBrowserOpen>true</holdBrowserOpen>
-            </properties>
-        </profile>
-    </profiles>
+
   
   <dependencies>
 	<dependency>
@@ -88,7 +21,16 @@
 	    <artifactId>maven-surefire-plugin</artifactId>
 	    <version>2.12.4</version>
 	</dependency>
-    
+    <dependency>
+       <groupId>org.slf4j</groupId>
+       <artifactId>slf4j-api</artifactId>
+       <version>1.7.5</version>
+   </dependency>
+   <dependency>
+       <groupId>org.slf4j</groupId>
+       <artifactId>slf4j-simple</artifactId>
+       <version>1.6.4</version>
+   </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
