@@ -60,7 +60,7 @@ public class WinTheGameStepDefinitions {
 		
 //		System.setProperty("selenide.browser", "Chrome");
         
-	    open("/AhorcadoWeb/index.jsp");
+	    open("http://localhost:8080/AhorcadoWeb/index.jsp");
 //	    Thread.sleep(40000);
 	
 //	    driver = new ChromeDriver();
