@@ -2,10 +2,15 @@ package com.agiles.UI.Cucumber;
 
 import com.codeborne.selenide.Configuration;
 
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import io.github.bonigarcia.wdm.ChromeDriverManager;
+
 import static com.codeborne.selenide.Selenide.*;
+
+import java.net.URI;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriver.Options;
@@ -17,7 +22,18 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static com.codeborne.selenide.Condition.*;
 
+
+
+
 public class WinTheGameStepDefinitions {
+	
+	
+	@Before
+	public static void setupClass() {
+	    ChromeDriverManager.getInstance().setup();
+	}
+	
+	
 	@Given("^an open browser with AhorcadoWeb/index\\.jsp$")
 	public void an_open_browser_with_AhorcadoWeb_index_jsp() throws Throwable {
 //		ChromeOptions options = new ChromeOptions();
@@ -43,8 +59,10 @@ public class WinTheGameStepDefinitions {
 		System.setProperty("selenide.browser", "Chrome");
         
 	    open("/AhorcadoWeb/index.jsp");
-	    Thread.sleep(40000);
+//	    Thread.sleep(40000);
 	
+//	    driver = new ChromeDriver();
+//		driver.navigate().to("http://localhost:8080/AhorcadoWeb/index.jsp");
 	}
 	
 	@When("^I click the letter \"([^\"]*)\"$")
@@ -53,7 +71,7 @@ public class WinTheGameStepDefinitions {
 			letter="enie";
 		}
 		$("#letter"+letter).click();
-//		WebElement addTrainer = (new WebDriverWait(WebDriver.class.newInstance(), 10)).until(ExpectedConditions.elementToBeClickable($("#letter"+letter)));
+//		WebElement addTrainer = (new WebDriverWait(driver, 7)).until(ExpectedConditions.elementToBeClickable($("#letter"+letter)));
 //		addTrainer.click();
 
 	}
