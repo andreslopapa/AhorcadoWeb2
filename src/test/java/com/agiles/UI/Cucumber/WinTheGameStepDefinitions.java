@@ -3,6 +3,7 @@ package com.agiles.UI.Cucumber;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide.*;
 import com.codeborne.selenide.WebDriverRunner;
+import com.sun.tools.internal.xjc.Driver;
 
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -22,6 +23,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 import static com.codeborne.selenide.Condition.*;
 
@@ -34,9 +36,10 @@ public class WinTheGameStepDefinitions {
 	@Before
 	public static void setupClass() {
 	    ChromeDriverManager.getInstance().setup();
+//		WebDriverManager.chromedriver().setup();
 	}
 	
-	
+//	 WebDriver driver;
 	@Given("^an open browser with AhorcadoWeb/index\\.jsp$")
 	public void an_open_browser_with_AhorcadoWeb_index_jsp() throws Throwable {
 //		ChromeOptions options = new ChromeOptions();
@@ -59,14 +62,14 @@ public class WinTheGameStepDefinitions {
 //		System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
 		
 		
-//		System.setProperty("selenide.browser", "Chrome");
-//	    open("/AhorcadoWeb/index.jsp");
+		System.setProperty("selenide.browser", "Chrome");
+	    open("/AhorcadoWeb/index.jsp");
 
 	
-	    WebDriver driver = new ChromeDriver();
-	    WebDriverRunner.setWebDriver(driver);
+//	    driver = new ChromeDriver();
+//	    WebDriverRunner.setWebDriver(driver);
 //		driver.navigate().to("http://localhost:8080/AhorcadoWeb/index.jsp");
-	    open("/AhorcadoWeb/index.jsp");
+//	    open("/AhorcadoWeb/index.jsp");
 	}
 	
 	@When("^I click the letter \"([^\"]*)\"$")
@@ -75,9 +78,14 @@ public class WinTheGameStepDefinitions {
 			letter="enie";
 		}
 //		$("#letterh").should(exist);
+//		driver.findElement(By.id("#letter"+letter));
 		$("#letter"+letter).click();
-//		WebElement addTrainer = (new WebDriverWait(driver, 7)).until(ExpectedConditions.elementToBeClickable($("#letter"+letter)));
+//		WebElement addTrainer = (new WebDriverWait(driver, 7)).until(ExpectedConditions.elementToBeClickable(By.id("#letter"+letter)));
 //		addTrainer.click();
+//		driver.findElement(By.className(".alphabets")).click();;
+//		WebDriverWait wait = new WebDriverWait(driver, 15);
+//	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("#letter"+letter))).click();;
+		
 //
 	}
 	
