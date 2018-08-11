@@ -63,7 +63,7 @@ public class WinTheGameStepDefinitions {
 		
 		
 		System.setProperty("selenide.browser", "Chrome");
-	    open("/AhorcadoWeb/index.jsp");
+	    open("http://localhost:8080/AhorcadoWeb/index.jsp");
 	    System.out.println(getWebDriver().getCurrentUrl());
 
 	
@@ -80,6 +80,7 @@ public class WinTheGameStepDefinitions {
 		}
 //		$("#letterh").should(exist);
 //		driver.findElement(By.id("#letter"+letter));
+		Thread.sleep(180000);
 		$("#letter"+letter).click();
 //		WebElement addTrainer = (new WebDriverWait(driver, 7)).until(ExpectedConditions.elementToBeClickable(By.id("#letter"+letter)));
 //		addTrainer.click();
