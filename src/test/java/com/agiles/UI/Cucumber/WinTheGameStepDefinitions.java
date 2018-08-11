@@ -30,10 +30,10 @@ import static com.codeborne.selenide.Condition.*;
 public class WinTheGameStepDefinitions {
 	
 	
-	@Before
-	public static void setupClass() {
-	    ChromeDriverManager.getInstance().setup();
-	}
+//	@Before
+//	public static void setupClass() {
+//	    ChromeDriverManager.getInstance().setup();
+//	}
 	
 	
 	@Given("^an open browser with AhorcadoWeb/index\\.jsp$")
@@ -58,7 +58,7 @@ public class WinTheGameStepDefinitions {
 //		System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
 		
 		
-		System.setProperty("selenide.browser", "Chrome");
+//		System.setProperty("selenide.browser", "Chrome");
         
 	    open("/AhorcadoWeb/index.jsp");
 //	    Thread.sleep(40000);
@@ -72,8 +72,8 @@ public class WinTheGameStepDefinitions {
 		if(letter.equals("ñ")){
 			letter="enie";
 		}
-		$("#letter"+letter).should(exist);
-//		$("#letter"+letter).click();
+//		$("#letterh").should(exist);
+		$("#letter"+letter).click();
 //		WebElement addTrainer = (new WebDriverWait(driver, 7)).until(ExpectedConditions.elementToBeClickable($("#letter"+letter)));
 //		addTrainer.click();
 //
