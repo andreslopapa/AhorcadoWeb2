@@ -80,7 +80,8 @@ public class WinTheGameStepDefinitions {
 		}
 //		$("#letterh").should(exist);
 //		driver.findElement(By.id("#letter"+letter));
-		Thread.sleep(180000);
+		Thread.sleep(120000);
+		System.out.println(getWebDriver().getPageSource());
 		$("#letter"+letter).click();
 //		WebElement addTrainer = (new WebDriverWait(driver, 7)).until(ExpectedConditions.elementToBeClickable(By.id("#letter"+letter)));
 //		addTrainer.click();
