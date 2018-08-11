@@ -7,6 +7,76 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>AhorcadoWeb Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  
+      <profiles>
+        <profile>
+            <id>firefox</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <browser>firefox</browser>
+            </properties>
+        </profile>
+        <profile>
+            <id>chrome</id>
+            <properties>
+                <browser>chrome</browser>
+            </properties>
+        </profile>
+        <profile>
+            <id>phantomjs</id>
+            <properties>
+                <browser>phantomjs</browser>
+            </properties>
+        </profile>
+        <profile>
+            <id>ie</id>
+            <properties>
+                <browser>ie</browser>
+            </properties>
+        </profile>
+        <profile>
+            <id>safari</id>
+            <properties>
+                <browser>safari</browser>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>org.seleniumhq.selenium</groupId>
+                    <artifactId>selenium-safari-driver</artifactId>
+                    <version>${selenium.version}</version>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>htmlunit</id>
+            <properties>
+                <browser>htmlunit</browser>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>org.seleniumhq.selenium</groupId>
+                    <artifactId>selenium-htmlunit-driver</artifactId>
+                    <version>LATEST</version>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>ci-server</id>
+            <properties>
+                <surefire.argLine>-Dremote=${selenium.hub.url}</surefire.argLine>
+            </properties>
+        </profile>
+        <profile>
+            <id>local</id>
+            <properties>
+                <holdBrowserOpen>true</holdBrowserOpen>
+            </properties>
+        </profile>
+    </profiles>
+  
   <dependencies>
 	<dependency>
 	    <groupId>org.seleniumhq.selenium</groupId>
@@ -44,7 +114,6 @@
 		<version>4.12.3</version>
 		<scope>test</scope>
 	</dependency>
-	
 	<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-java</artifactId>
