@@ -5,7 +5,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Condition.*;
 
 
-public class UITestAhorcado {
+public class TestUIAhorcado {
 	
 	
 	@Test

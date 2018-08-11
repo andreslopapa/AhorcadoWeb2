@@ -30,10 +30,10 @@ import static com.codeborne.selenide.Condition.*;
 public class WinTheGameStepDefinitions {
 	
 	
-//	@Before
-//	public static void setupClass() {
-//	    ChromeDriverManager.getInstance().setup();
-//	}
+	@Before
+	public static void setupClass() {
+	    ChromeDriverManager.getInstance().setup();
+	}
 	
 	
 	@Given("^an open browser with AhorcadoWeb/index\\.jsp$")
@@ -58,9 +58,9 @@ public class WinTheGameStepDefinitions {
 //		System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
 		
 		
-//		System.setProperty("selenide.browser", "Chrome");
+		System.setProperty("selenide.browser", "Chrome");
         
-	    open("http://localhost:8080/AhorcadoWeb/index.jsp");
+	    open("/AhorcadoWeb/index.jsp");
 //	    Thread.sleep(40000);
 	
 //	    driver = new ChromeDriver();
