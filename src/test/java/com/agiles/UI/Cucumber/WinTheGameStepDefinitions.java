@@ -2,6 +2,7 @@ package com.agiles.UI.Cucumber;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide.*;
+import com.codeborne.selenide.WebDriverRunner;
 
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -58,13 +59,14 @@ public class WinTheGameStepDefinitions {
 //		System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
 		
 		
-		System.setProperty("selenide.browser", "Chrome");
-        
-	    open("/AhorcadoWeb/index.jsp");
-//	    Thread.sleep(40000);
+//		System.setProperty("selenide.browser", "Chrome");
+//	    open("/AhorcadoWeb/index.jsp");
+
 	
-//	    driver = new ChromeDriver();
+	    WebDriver driver = new ChromeDriver();
+	    WebDriverRunner.setWebDriver(driver);
 //		driver.navigate().to("http://localhost:8080/AhorcadoWeb/index.jsp");
+	    open("/AhorcadoWeb/index.jsp");
 	}
 	
 	@When("^I click the letter \"([^\"]*)\"$")
