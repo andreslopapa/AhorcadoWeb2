@@ -1,6 +1,7 @@
 package com.agiles.UI.Cucumber;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide.*;
 
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -12,6 +13,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 import java.net.URI;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriver.Options;
 import org.openqa.selenium.WebElement;
