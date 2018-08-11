@@ -1,12 +1,20 @@
 package com.agiles.UI.selenide;
 
 import org.junit.Test;
+
+import cucumber.api.java.Before;
+import io.github.bonigarcia.wdm.ChromeDriverManager;
+
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Condition.*;
 
 
 public class TestUIAhorcado {
 	
+	@Before
+	public static void setupClass() {
+	    ChromeDriverManager.getInstance().setup();
+	}
 	
 	@Test
 	public void ingresarUnaSolaLetra() {
@@ -82,7 +90,7 @@ public class TestUIAhorcado {
 	
 	
 	public void preparePage(){
-//		System.setProperty("selenide.browser", "chrome");
+		System.setProperty("selenide.browser", "chrome");
 		open("/AhorcadoWeb/index.jsp");
 	}
 }
