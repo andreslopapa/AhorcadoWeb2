@@ -67,16 +67,16 @@ public class WinTheGameStepDefinitions {
 //		driver.navigate().to("http://localhost:8080/AhorcadoWeb/index.jsp");
 	}
 	
-	@When("^I click the letter \"([^\"]*)\"$")
-	public void i_click_the_letter(String letter) throws Throwable {
-		if(letter.equals("ñ")){
-			letter="enie";
-		}
-		$("#letter"+letter).click();
-//		WebElement addTrainer = (new WebDriverWait(driver, 7)).until(ExpectedConditions.elementToBeClickable($("#letter"+letter)));
-//		addTrainer.click();
-
-	}
+//	@When("^I click the letter \"([^\"]*)\"$")
+//	public void i_click_the_letter(String letter) throws Throwable {
+//		if(letter.equals("ñ")){
+//			letter="enie";
+//		}
+//		$("#letter"+letter).click();
+////		WebElement addTrainer = (new WebDriverWait(driver, 7)).until(ExpectedConditions.elementToBeClickable($("#letter"+letter)));
+////		addTrainer.click();
+//
+//	}
 	
 
 	@Then("^a message saying \"([^\"]*)\" should appear$")
