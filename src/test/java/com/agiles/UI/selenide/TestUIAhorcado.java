@@ -1,29 +1,40 @@
 package com.agiles.UI.selenide;
 
 import org.junit.Test;
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 
+import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 import static com.codeborne.selenide.Selenide.*;
 
 import java.net.URL;
-import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Condition.*;
 
 
 public class TestUIAhorcado {
 	
-	@Before
-	public static void setupClass() {
-	    ChromeDriverManager.getInstance().setup();
-	}
+//	@Before
+//	public static void setupClass() {
+//		openBrowser();
+////	    ChromeDriverManager.getInstance().setup();
+//	}
+	
+//	@After
+//	public static void close(){
+//		WebDriverRunner.closeWebDriver();
+//		WebDriverRunner.getWebDriver().quit();
+//	}
 	
 	@Test
 	public void ingresarUnaSolaLetra() {
@@ -60,7 +71,7 @@ public class TestUIAhorcado {
 	@Test
 	public void juegoPerdido() {
 		
-		 openBrowser();
+ 		 openBrowser();
 		 $("#letterg").click();
 		 $("#letterr").click();
 		 $("#lettere").click();
@@ -79,7 +90,7 @@ public class TestUIAhorcado {
 	
 	@Test
 	public void juegoGanadoConCincoLetras(){
-		openBrowser();
+ 		 openBrowser();
 		 $("#letterh").click();
 		 $("#letterr").click();
 		 $("#letterl").click();
@@ -98,22 +109,40 @@ public class TestUIAhorcado {
 	
 	
 	
-	public void openBrowser(){
+	public static void openBrowser(){
 		
 		try{
-//		System.setProperty("webdriver.chrome.driver","/usr/bin/google-chrome");
-		ChromeDriverManager.getInstance().setup();
-		String urlToRemoteWD = "http://localhost:4444/wd/hub";
-		RemoteWebDriver driver =new RemoteWebDriver(new URL(urlToRemoteWD),DesiredCapabilities.chrome());
-		WebDriverRunner.setWebDriver(driver);
+//			DesiredCapabilities cap=new DesiredCapabilities();
+//			cap.setBrowserName("chrome");
+//			cap.setPlatform(Platform.LINUX);
+//			
+//			ChromeOptions options=new ChromeOptions();
+//			options.merge(cap);
+			
+//			System.setProperty("selenide.browser", "Chrome");
+			String urlToRemoteWD = "http://localhost:4444/wd/hub";
+			System.setProperty("selenide.browser", "chrome");
+//			ChromeDriverManager.getInstance().setup();
+			
+			Configuration.remote=urlToRemoteWD;
+			
+//			WebDriver driver =new RemoteWebDriver(new URL(urlToRemoteWD),options);
+//			WebDriverRunner.setWebDriver(driver);
+			open("/AhorcadoWeb/index.jsp");
+		    Selenide.clearBrowserCookies();
+			
+			
+//		System.setProperty("webdriver.chrome.driver","/home/lopa/Descargas/chromedriver");
+//		System.setProperty("selenide.browser", "Chrome");
 		
-		System.setProperty("selenide.browser", "Chrome");
+		
+		
 //		WebDriverRunner.getWebDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); 
 //		SeleniumServer _server = new SeleniumServer(); 
 //		_server.boot(); 
 //		_server.start();
-	    open("/AhorcadoWeb/index.jsp");
-	    Selenide.clearBrowserCookies();
+//	    open("http://localhost:4444/wd/hub/AhorcadoWeb/index.jsp");
+		
 	    /*when you launch selenium it creates a 
 	     * temporary profile and when you close it,selenium deletes it*/}
 		catch(Exception ex){

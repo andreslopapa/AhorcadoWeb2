@@ -1,27 +1,28 @@
 package com.agiles.UI.Cucumber;
 
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
 
-import org.junit.BeforeClass;
 
 import com.agiles.UI.selenide.TestUIAhorcado;
-import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.WebDriverRunner;
 
-import cucumber.api.java.Before;
+import cucumber.api.java.After;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 public class CommonSteps {
-	@Before
-	public static void setupClass() {
-	    ChromeDriverManager.getInstance().setup();
-	}
+//	@Before
+//	public static void setupClass() {
+//	    ChromeDriverManager.getInstance().setup();
+//	}
+//	@After
+//	public static void close(){
+//		TestUIAhorcado.close();
+//	}
 	
 	@Given("^an open browser with AhorcadoWeb/index\\.jsp$")
 	public void an_open_browser_with_AhorcadoWeb_index_jsp() throws Throwable {
-		new TestUIAhorcado().openBrowser();
+		TestUIAhorcado.openBrowser();
 	}
 	
 	
