@@ -16,7 +16,10 @@ before_script:
  - sudo apt-get install -y libappindicator1 fonts-liberation
  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
  - sudo dpkg -i google-chrome*.deb
-
+- wget http://chromedriver.storage.googleapis.com/2.24/chromedriver_linux64.zip
+- unzip chromedriver_linux64.zip -d 
+/home/travis/virtualenv/python2.7.12/bin/
+- export CHROME_BIN=chromium-browser
 
 
 script:
