@@ -7,14 +7,15 @@ before_script:
 
  - export CHROME_BIN=/usr/bin/google-chrome
  - export DISPLAY=:99.0
+ - wget http://selenium-release.storage.googleapis.com/2.43/selenium-server-standalone-2.43.1.jar
+ - java -jar selenium-server-standalone-2.43.1.jar -h -role node > /dev/null &
  - sh -e /etc/init.d/xvfb start
  - sleep 5
  - sudo apt-get update
  - sudo apt-get install -y libappindicator1 fonts-liberation
  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
  - sudo dpkg -i google-chrome*.deb
- - "wget http://selenium-release.storage.googleapis.com/2.43/selenium-server-standalone-2.43.1.jar"
- - "java -jar selenium-server-standalone-2.43.1.jar > /dev/null &"
+
 
 
 script:
