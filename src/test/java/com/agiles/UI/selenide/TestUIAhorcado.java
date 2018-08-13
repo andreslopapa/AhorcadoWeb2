@@ -97,7 +97,10 @@ public class TestUIAhorcado {
 	
 	public void openBrowser(){
 		System.setProperty("selenide.browser", "Chrome");
-		WebDriverRunner.getWebDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);    
+//		WebDriverRunner.getWebDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); 
+//		SeleniumServer _server = new SeleniumServer(); 
+//		_server.boot(); 
+//		_server.start();
 	    open("/AhorcadoWeb/index.jsp");
 	    Selenide.clearBrowserCookies();
 	    /*when you launch selenium it creates a 
