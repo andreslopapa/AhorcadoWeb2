@@ -93,7 +93,7 @@ public class TestUIAhorcado {
 	
 	public void openBrowser(){
 		System.setProperty("selenide.browser", "Chrome");
-	    open("http://localhost:8080/AhorcadoWeb/index.jsp");
+	    open("/AhorcadoWeb/index.jsp");
 	    Selenide.clearBrowserCookies();
 	    /*when you launch selenium it creates a 
 	     * temporary profile and when you close it,selenium deletes it*/
