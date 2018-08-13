@@ -17,33 +17,38 @@
 ## (Comments)
 #Sample Feature Definition Template
 
-Feature: Win the Game
-	Several ways to win the game
 
- @PerfectGameTest
-  Scenario: the user enters all the letters correctly
+Feature: Lose the Game
+	Several ways to lose the game
+
+ @WorstGameOverTest
+  Scenario: the user enters only wrong letters
     Given an open browser with AhorcadoWeb/index.jsp
-    When I click the letter "h"
-    And I click the letter "l"
-    And I click the letter "o"
-    And I click the letter "a"
-    Then a message saying "Te Salvaste Perro!" should appear
+    When I click the letter "x"
+    And I click the letter "c"
+    And I click the letter "r"
+    And I click the letter "y"
+    And I click the letter "f"
+    Then a title saying "Perdiste Perro!" should appear
     And the keyboard should disappear
     And the remaining errors should disappear
     And the entered letters should disappear
+    And the hanged man should appear in the image
+    And a message saying the correct word should appear
 
-  @NotPerfectGameTest
-  Scenario: the user wins with two wrong letters
+  @NotWorstGameOverTest
+  Scenario: the user enters some correct letters but loses the game
     Given an open browser with AhorcadoWeb/index.jsp
     When I click the letter "h"
-    And I click the letter "l"
     And I click the letter "x"
-    And I click the letter "o"
+    And I click the letter "l"
+    And I click the letter "y"
     And I click the letter "v"
-    And I click the letter "a"
-    Then a message saying "Te Salvaste Perro!" should appear
+    And I click the letter "r"
+    And I click the letter "q"
+    Then a title saying "Perdiste Perro!" should appear
     And the keyboard should disappear
     And the remaining errors should disappear
     And the entered letters should disappear
-
- 
+    And the hanged man should appear in the image
+    And a message saying the correct word should appear

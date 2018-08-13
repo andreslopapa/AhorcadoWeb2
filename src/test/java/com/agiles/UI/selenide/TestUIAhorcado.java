@@ -2,6 +2,8 @@ package com.agiles.UI.selenide;
 
 import org.junit.Test;
 
+import com.codeborne.selenide.Selenide;
+
 import cucumber.api.java.Before;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
@@ -19,7 +21,7 @@ public class TestUIAhorcado {
 	@Test
 	public void ingresarUnaSolaLetra() {
 		
-		 preparePage();
+		 openBrowser();
 		 $("#letterh").click();
 		 $("#letrasUsadas").shouldHave(text("h"));
 		 $(".letras-palabra").shouldHave(text("h _ _ _ "));
@@ -33,7 +35,7 @@ public class TestUIAhorcado {
 	@Test
 	public void juegoGanado() {
 		
-		 preparePage();
+		 openBrowser();
 		 $("#letterh").click();
 		 $("#lettero").click();
 		 $("#letterl").click();
@@ -51,7 +53,7 @@ public class TestUIAhorcado {
 	@Test
 	public void juegoPerdido() {
 		
-		 preparePage();
+		 openBrowser();
 		 $("#letterg").click();
 		 $("#letterr").click();
 		 $("#lettere").click();
@@ -70,7 +72,7 @@ public class TestUIAhorcado {
 	
 	@Test
 	public void juegoGanadoConCincoLetras(){
-		preparePage();
+		openBrowser();
 		 $("#letterh").click();
 		 $("#letterr").click();
 		 $("#letterl").click();
@@ -89,9 +91,12 @@ public class TestUIAhorcado {
 	
 	
 	
-	public void preparePage(){
-		System.setProperty("selenide.browser", "chrome");
-		open("/AhorcadoWeb/index.jsp");
+	public void openBrowser(){
+		System.setProperty("selenide.browser", "Chrome");
+	    open("http://localhost:8080/AhorcadoWeb/index.jsp");
+	    Selenide.clearBrowserCookies();
+	    /*when you launch selenium it creates a 
+	     * temporary profile and when you close it,selenium deletes it*/
 	}
 }
 

@@ -33,64 +33,64 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 public class WinTheGameStepDefinitions {
 	
 	
-	@Before
-	public static void setupClass() {
-	    ChromeDriverManager.getInstance().setup();
-//		WebDriverManager.chromedriver().setup();
-	}
-	
-//	 WebDriver driver;
-	@Given("^an open browser with AhorcadoWeb/index\\.jsp$")
-	public void an_open_browser_with_AhorcadoWeb_index_jsp() throws Throwable {
-//		ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--no-sandbox");
-//        System.setProperty("webdriver.chrome.driver","/usr/bin/google-chrome");
-//        WebDriver browser = new ChromeDriver(options);
-        
-//		Configuration.browser = "chrome";
-//	    Configuration.startMaximized = false;
-//		System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
-//		ChromeOptions options = new ChromeOptions();
-//		options.addArguments("start-maximized"); // open Browser in maximized mode
-//		options.addArguments("disable-infobars"); // disabling infobars
-//		options.addArguments("--disable-extensions"); // disabling extensions
-//		options.addArguments("--disable-gpu"); // applicable to windows os only
-//		options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-//		options.addArguments("--no-sandbox"); // Bypass OS security model
-//		WebDriver driver = new ChromeDriver(options);
-//		driver.get("/AhorcadoWeb/index.jsp");
-//		System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
-		
-		
-		System.setProperty("selenide.browser", "Chrome");
-	    open("http://localhost:8080/AhorcadoWeb/index.jsp");
-	    System.out.println(getWebDriver().getCurrentUrl());
-
-	
-//	    driver = new ChromeDriver();
-//	    WebDriverRunner.setWebDriver(driver);
-//		driver.navigate().to("http://localhost:8080/AhorcadoWeb/index.jsp");
-//	    open("/AhorcadoWeb/index.jsp");
-	}
-	
-	@When("^I click the letter \"([^\"]*)\"$")
-	public void i_click_the_letter(String letter) throws Throwable {
-		if(letter.equals("ñ")){
-			letter="enie";
-		}
-//		$("#letterh").should(exist);
-//		driver.findElement(By.id("#letter"+letter));
-		Thread.sleep(120000);
-		System.out.println(getWebDriver().getPageSource());
-		$("#letter"+letter).click();
-//		WebElement addTrainer = (new WebDriverWait(driver, 7)).until(ExpectedConditions.elementToBeClickable(By.id("#letter"+letter)));
-//		addTrainer.click();
-//		driver.findElement(By.className(".alphabets")).click();;
-//		WebDriverWait wait = new WebDriverWait(driver, 15);
-//	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("#letter"+letter))).click();;
-		
+//	@Before
+//	public static void setupClass() {
+//	    ChromeDriverManager.getInstance().setup();
+////		WebDriverManager.chromedriver().setup();
+//	}
+//	
+////	 WebDriver driver;
+//	@Given("^an open browser with AhorcadoWeb/index\\.jsp$")
+//	public void an_open_browser_with_AhorcadoWeb_index_jsp() throws Throwable {
+////		ChromeOptions options = new ChromeOptions();
+////        options.addArguments("--no-sandbox");
+////        System.setProperty("webdriver.chrome.driver","/usr/bin/google-chrome");
+////        WebDriver browser = new ChromeDriver(options);
+//        
+////		Configuration.browser = "chrome";
+////	    Configuration.startMaximized = false;
+////		System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
+////		ChromeOptions options = new ChromeOptions();
+////		options.addArguments("start-maximized"); // open Browser in maximized mode
+////		options.addArguments("disable-infobars"); // disabling infobars
+////		options.addArguments("--disable-extensions"); // disabling extensions
+////		options.addArguments("--disable-gpu"); // applicable to windows os only
+////		options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+////		options.addArguments("--no-sandbox"); // Bypass OS security model
+////		WebDriver driver = new ChromeDriver(options);
+////		driver.get("/AhorcadoWeb/index.jsp");
+////		System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
+//		
+//		
+//		System.setProperty("selenide.browser", "Chrome");
+//	    open("http://localhost:8080/AhorcadoWeb/index.jsp");
+//	    System.out.println(getWebDriver().getCurrentUrl());
 //
-	}
+//	
+////	    driver = new ChromeDriver();
+////	    WebDriverRunner.setWebDriver(driver);
+////		driver.navigate().to("http://localhost:8080/AhorcadoWeb/index.jsp");
+////	    open("/AhorcadoWeb/index.jsp");
+//	}
+	
+//	@When("^I click the letter \"([^\"]*)\"$")
+//	public void i_click_the_letter(String letter) throws Throwable {
+//		if(letter.equals("ñ")){
+//			letter="enie";
+//		}
+////		$("#letterh").should(exist);
+////		driver.findElement(By.id("#letter"+letter));
+////		Thread.sleep(120000);
+////		System.out.println(getWebDriver().getPageSource());
+//		$("#letter"+letter).click();
+////		WebElement addTrainer = (new WebDriverWait(driver, 7)).until(ExpectedConditions.elementToBeClickable(By.id("#letter"+letter)));
+////		addTrainer.click();
+////		driver.findElement(By.className(".alphabets")).click();;
+////		WebDriverWait wait = new WebDriverWait(driver, 15);
+////	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("#letter"+letter))).click();;
+//		
+////
+//	}
 	
 
 	@Then("^a message saying \"([^\"]*)\" should appear$")
@@ -114,6 +114,7 @@ public class WinTheGameStepDefinitions {
 		$(".letrasUsadasTit").shouldNot(exist);
 		$(".letrasUsadas").shouldNot(exist);
 	}
+
 
 
 }
