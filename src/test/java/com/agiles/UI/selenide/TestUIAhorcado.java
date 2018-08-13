@@ -3,11 +3,15 @@ package com.agiles.UI.selenide;
 import org.junit.Test;
 
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.WebDriverRunner;
 
 import cucumber.api.java.Before;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 import static com.codeborne.selenide.Selenide.*;
+
+import java.util.concurrent.TimeUnit;
+
 import static com.codeborne.selenide.Condition.*;
 
 
@@ -93,6 +97,7 @@ public class TestUIAhorcado {
 	
 	public void openBrowser(){
 		System.setProperty("selenide.browser", "Chrome");
+		WebDriverRunner.getWebDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);    
 	    open("/AhorcadoWeb/index.jsp");
 	    Selenide.clearBrowserCookies();
 	    /*when you launch selenium it creates a 
