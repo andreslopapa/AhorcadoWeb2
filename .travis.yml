@@ -14,9 +14,8 @@ before_install:
  - sudo dpkg -i google-chrome*.deb
 
 before_script:
- - npm install selenium-standalone@latest -g
- - selenium-standalone install
- - selenium-standalone start
+- "wget http://selenium-release.storage.googleapis.com/2.43/selenium-server-standalone-2.43.1.jar"
+- "java -jar selenium-server-standalone-2.43.1.jar > /dev/null &"
 
 script:
   - jdk_switcher use oraclejdk8
