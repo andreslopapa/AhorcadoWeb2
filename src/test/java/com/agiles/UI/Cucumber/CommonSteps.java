@@ -3,6 +3,8 @@ package com.agiles.UI.Cucumber;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
+import org.junit.BeforeClass;
+
 import com.agiles.UI.selenide.TestUIAhorcado;
 import com.codeborne.selenide.Selenide;
 

@@ -1,6 +1,8 @@
 package com.agiles.UI.selenide;
 
 import org.junit.Test;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
@@ -10,6 +12,7 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 import static com.codeborne.selenide.Selenide.*;
 
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Condition.*;
@@ -96,6 +99,14 @@ public class TestUIAhorcado {
 	
 	
 	public void openBrowser(){
+		
+		try{
+//		System.setProperty("webdriver.chrome.driver","/usr/bin/google-chrome");
+		ChromeDriverManager.getInstance().setup();
+		String urlToRemoteWD = "http://localhost:4444/wd/hub";
+		RemoteWebDriver driver =new RemoteWebDriver(new URL(urlToRemoteWD),DesiredCapabilities.chrome());
+		WebDriverRunner.setWebDriver(driver);
+		
 		System.setProperty("selenide.browser", "Chrome");
 //		WebDriverRunner.getWebDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); 
 //		SeleniumServer _server = new SeleniumServer(); 
@@ -104,7 +115,10 @@ public class TestUIAhorcado {
 	    open("/AhorcadoWeb/index.jsp");
 	    Selenide.clearBrowserCookies();
 	    /*when you launch selenium it creates a 
-	     * temporary profile and when you close it,selenium deletes it*/
+	     * temporary profile and when you close it,selenium deletes it*/}
+		catch(Exception ex){
+			System.out.println(ex);
+		}
 	}
 }
 
