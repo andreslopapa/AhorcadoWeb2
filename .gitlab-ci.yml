@@ -1,15 +1,9 @@
 image: maven:latest
 
-cache:
-  paths:
-    - .m2/repository/
-    - target/
-
-
 test:
   stage: test
   script:
-    - mvn clean test
+    - mvn -e clean test
 
 deploy:
   stage: deploy
