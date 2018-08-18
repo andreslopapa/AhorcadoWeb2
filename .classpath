@@ -29,6 +29,5 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/lopa/Descargas/selenium-server-standalone-3.14.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

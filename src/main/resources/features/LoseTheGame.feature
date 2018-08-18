@@ -29,7 +29,7 @@ Feature: Lose the Game
     And I click the letter "r"
     And I click the letter "y"
     And I click the letter "f"
-    Then a title saying "Perdiste Perro!" should appear
+    Then a title saying "Perdiste!" should appear
     And the keyboard should disappear
     And the remaining errors should disappear
     And the entered letters should disappear
@@ -46,7 +46,7 @@ Feature: Lose the Game
     And I click the letter "v"
     And I click the letter "r"
     And I click the letter "q"
-    Then a title saying "Perdiste Perro!" should appear
+    Then a title saying "Perdiste!" should appear
     And the keyboard should disappear
     And the remaining errors should disappear
     And the entered letters should disappear

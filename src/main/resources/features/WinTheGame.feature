@@ -27,7 +27,7 @@ Feature: Win the Game
     And I click the letter "l"
     And I click the letter "o"
     And I click the letter "a"
-    Then a message saying "Te Salvaste Perro!" should appear
+    Then a message saying "Te Salvaste!" should appear
     And the keyboard should disappear
     And the remaining errors should disappear
     And the entered letters should disappear
@@ -41,7 +41,7 @@ Feature: Win the Game
     And I click the letter "o"
     And I click the letter "v"
     And I click the letter "a"
-    Then a message saying "Te Salvaste Perro!" should appear
+    Then a message saying "Te Salvaste!" should appear
     And the keyboard should disappear
     And the remaining errors should disappear
     And the entered letters should disappear
