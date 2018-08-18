@@ -3,7 +3,7 @@ image: maven:latest
 test:
   stage: test
   script:
-    - mvn -e clean test
+    - mvn -e clean test -Djava.awt.headless=true
 
 deploy:
   stage: deploy
