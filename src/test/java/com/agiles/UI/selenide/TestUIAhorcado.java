@@ -113,7 +113,7 @@ public class TestUIAhorcado {
 	public static void openBrowser(){
 		
 		try{
-			System.setProperty("webdriver.gecko.driver","/home/travis/geckodriver");
+			System.setProperty("webdriver.gecko.driver","/home/travis/build/andreslopapa/AhorcadoWeb2/geckodriver");
 			
 			//ChromeOptions options = new ChromeOptions();
 			FirefoxOptions options = new FirefoxOptions();
