@@ -112,6 +112,11 @@ public class TestUIAhorcado {
 	public static void openBrowser(){
 		
 		try{
+			ChromeOptions options = new ChromeOptions();
+			// set some options
+			DesiredCapabilities dc = DesiredCapabilities.chrome();
+			dc.setCapability(ChromeOptions.CAPABILITY, options);
+			WebDriver driver = new RemoteWebDriver(dc);
 //			DesiredCapabilities cap=new DesiredCapabilities();
 //			cap.setBrowserName("chrome");
 //			cap.setPlatform(Platform.LINUX);
