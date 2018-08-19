@@ -17,7 +17,7 @@ jobs:
       - checkout
       - restore_cache:
           key: ~/SelenideDemo-{{ checksum "pom.xml" }}
-      - run: mvn -e clean test
+      - run: mvn package
       - store_test_results:
           path: target/surefire-reports
       - store_artifacts:
