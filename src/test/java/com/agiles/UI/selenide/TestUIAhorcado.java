@@ -112,12 +112,13 @@ public class TestUIAhorcado {
 	public static void openBrowser(){
 		
 		try{
-			/* ChromeOptions options = new ChromeOptions();
+			ChromeOptions options = new ChromeOptions();
 			//FirefoxOptions options = new FirefoxOptions();
 			// set some options
 			DesiredCapabilities dc = DesiredCapabilities.chrome();
 			dc.setCapability(ChromeOptions.CAPABILITY, options);
-			WebDriver driver = new RemoteWebDriver(dc); */
+			URL url = new URL("http://localhost:4444/wd/hub");
+			WebDriver driver = new RemoteWebDriver(url, dc);
 //			DesiredCapabilities cap=new DesiredCapabilities();
 //			cap.setBrowserName("chrome");
 //			cap.setPlatform(Platform.LINUX);
@@ -127,7 +128,7 @@ public class TestUIAhorcado {
 			
 //			System.setProperty("selenide.browser", "Chrome");
 //			String urlToRemoteWD = "http://localhost:4444/wd/hub";
-			System.setProperty("selenide.browser", "firefox");
+			System.setProperty("selenide.browser", "chrome");
 //			ChromeDriverManager.getInstance().setup();
 			
 //			Configuration.remote=urlToRemoteWD;
