@@ -113,6 +113,8 @@ public class TestUIAhorcado {
 	public static void openBrowser(){
 		
 		try{
+			System.setProperty("webdriver.gecko.driver","/home/circleci/geckodriver");
+			
 			ChromeOptions options = new ChromeOptions();
 			//FirefoxOptions options = new FirefoxOptions();
 			// set some options
@@ -129,8 +131,8 @@ public class TestUIAhorcado {
 			
 //			System.setProperty("selenide.browser", "Chrome");
 //			String urlToRemoteWD = "http://localhost:4444/wd/hub";
-			//System.setProperty("webdriver.gecko.driver","/home/circleci/repo/geckodriver");
-			System.setProperty("webdriver.gecko.driver","/home/circleci/.m2/repository/webdriver/geckodriver/linux64/0.21.0/geckodriver");
+			
+			//System.setProperty("webdriver.gecko.driver","/home/circleci/.m2/repository/webdriver/geckodriver/linux64/0.21.0/geckodriver");
 			System.setProperty("selenide.browser", "chrome");
 //			ChromeDriverManager.getInstance().setup();
 			
