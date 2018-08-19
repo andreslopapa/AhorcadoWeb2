@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -112,12 +113,12 @@ public class TestUIAhorcado {
 	public static void openBrowser(){
 		
 		try{
-			ChromeOptions options = new ChromeOptions();
-			//FirefoxOptions options = new FirefoxOptions();
+			//ChromeOptions options = new ChromeOptions();
+			FirefoxOptions options = new FirefoxOptions();
 			// set some options
-			DesiredCapabilities dc = DesiredCapabilities.chrome();
+			DesiredCapabilities dc = DesiredCapabilities.firefox();
 			dc.setCapability(ChromeOptions.CAPABILITY, options);
-			URL url = new URL("http://localhost:8080/AhorcadoWeb");
+			URL url = new URL("http://localhost:4444/wd/hub");
 			WebDriver driver = new RemoteWebDriver(url, dc);
 //			DesiredCapabilities cap=new DesiredCapabilities();
 //			cap.setBrowserName("chrome");
@@ -128,7 +129,8 @@ public class TestUIAhorcado {
 			
 //			System.setProperty("selenide.browser", "Chrome");
 //			String urlToRemoteWD = "http://localhost:4444/wd/hub";
-			System.setProperty("selenide.browser", "chrome");
+			System.setProperty("webdriver.gecko.driver","/Users/jsanchez/Downloads/geckodriver");
+			System.setProperty("selenide.browser", "firefox");
 //			ChromeDriverManager.getInstance().setup();
 			
 //			Configuration.remote=urlToRemoteWD;
