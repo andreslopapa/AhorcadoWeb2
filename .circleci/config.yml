@@ -50,3 +50,18 @@ jobs:
       #- run: sudo dpkg -i google-chrome*.deb
       - run: mvn -e clean test
 
+workflows:
+   version: 2
+   commit:
+     jobs:
+      - build
+   nightly:
+     triggers:
+       - schedule:
+          # 3am UTC
+          cron: "00 03 * * *"
+          filters:
+            branches:
+              only: master
+     jobs:
+       - build
