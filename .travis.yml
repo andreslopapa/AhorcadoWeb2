@@ -14,8 +14,8 @@ addons:
 before_script:
   - export CHROME_BIN=/usr/bin/google-chrome
   - export DISPLAY=:99.0
-  - wget http://selenium-release.storage.googleapis.com/2.43/selenium-server-standalone-2.43.1.jar
-  - java -jar selenium-server-standalone-2.43.1.jar -role hub > /dev/null &
+  - curl -O http://selenium-release.storage.googleapis.com/3.5/selenium-server-standalone-3.5.3.jar
+  - java -jar selenium-server-standalone-3.5.3.jar -log test-reports/selenium.log &
   - wget https://github.com/mozilla/geckodriver/releases/download/v0.21.0/geckodriver-v0.21.0-linux64.tar.gz
   - tar xvfz geckodriver-v0.21.0-linux64.tar.gz
   - ls /home/travis/build/andreslopapa/AhorcadoWeb2/geckodriver
