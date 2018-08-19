@@ -21,4 +21,4 @@ before_script:
   #- ls /home/travis/build/andreslopapa/AhorcadoWeb2/chromedriver
 
 script:
-  - mvn -e clean test
+  - mvn -X clean test

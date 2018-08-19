@@ -35,10 +35,11 @@ jobs:
           background: true
       - run: wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
       - run: unzip chromedriver_linux64.zip
+      - run: ls /home/circleci/repo/chromedriver
       - run: sh -e /etc/init.d/xvfb start
       - run: sleep 3
       #- run: sudo apt-get update
       #- run: sudo apt-get install -y libappindicator1 fonts-liberation libappindicator3-1 libxss1 lsb-release xdg-utils
       #- run: wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
       #- run: sudo dpkg -i google-chrome*.deb
-      - run: mvn -e clean test
+      - run: mvn test

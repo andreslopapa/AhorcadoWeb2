@@ -6,10 +6,11 @@ test:
     - mkdir test-reports
     - curl -O http://selenium-release.storage.googleapis.com/3.5/selenium-server-standalone-3.5.3.jar
     - java -jar selenium-server-standalone-3.5.3.jar -log test-reports/selenium.log &
-    #- sh -e /etc/init.d/xvfb start
-    - wget https://github.com/mozilla/geckodriver/releases/download/v0.21.0/geckodriver-v0.21.0-linux64.tar.gz
-    - tar xvfz geckodriver-v0.21.0-linux64.tar.gz
-    - ls /builds/joacosanchez95/ahorcado-web/geckodriver
+    - sh -e /etc/init.d/xvfb start
+    - sleep 3
+    - wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
+    - unzip chromedriver_linux64.zip
+    - ls /builds/joacosanchez95/ahorcado-web/chromedriver
     - mvn -e clean test
 
 deploy:
