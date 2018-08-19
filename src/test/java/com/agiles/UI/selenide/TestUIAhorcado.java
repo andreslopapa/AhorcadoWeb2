@@ -5,8 +5,11 @@ import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.Command;
+import org.openqa.selenium.remote.CommandExecutor;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.remote.Response;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
@@ -18,6 +21,7 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 import static com.codeborne.selenide.Selenide.*;
 
+import java.io.IOException;
 import java.net.URL;
 
 import static com.codeborne.selenide.Condition.*;
@@ -112,16 +116,16 @@ public class TestUIAhorcado {
 	
 	public static void openBrowser(){
 		
-		try{
-			ChromeOptions options = new ChromeOptions();
+		try{			
 			//FirefoxOptions options = new FirefoxOptions();
+			ChromeOptions options = new ChromeOptions();
 			options.setHeadless(true);
 			// set some options
 			DesiredCapabilities dc = DesiredCapabilities.chrome();
 			dc.setPlatform(Platform.LINUX);
-			//dc.setCapability(ChromeOptions.CAPABILITY, options);
-			URL url = new URL("http://localhost:4444/wd/hub");
-			WebDriver driver = new RemoteWebDriver(url, dc);
+			dc.setCapability(ChromeOptions.CAPABILITY, options);
+			//URL url = new URL("http://localhost:4444/wd/hub");
+			//WebDriver driver = new RemoteWebDriver(url, dc);
 //			DesiredCapabilities cap=new DesiredCapabilities();
 //			cap.setBrowserName("chrome");
 //			cap.setPlatform(Platform.LINUX);
@@ -132,11 +136,14 @@ public class TestUIAhorcado {
 //			System.setProperty("selenide.browser", "Chrome");
 //			String urlToRemoteWD = "http://localhost:4444/wd/hub";
 			
+			//System.setProperty("webdriver.chrome.driver", "/Users/jsanchez/Downloads/google-chrome");
+			//System.setProperty("webdriver.gecko.driver","/Users/jsanchez/Downloads/geckodriver");
+			
 			System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
 			//System.setProperty("webdriver.gecko.driver","/home/circleci/repo/geckodriver");
 			//System.setProperty("webdriver.gecko.driver","/home/travis/build/andreslopapa/AhorcadoWeb2/geckodriver");
-			//System.setProperty("webdriver.gecko.driver","/Users/jsanchez/Downloads/geckodriver");
 			//System.setProperty("webdriver.gecko.driver","/builds/joacosanchez95/ahorcado-web/geckodriver");
+			
 			System.setProperty("selenide.browser", "chrome");
 //			ChromeDriverManager.getInstance().setup();
 			
