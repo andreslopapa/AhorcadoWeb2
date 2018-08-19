@@ -118,7 +118,8 @@ public class TestUIAhorcado {
 			options.setHeadless(true);
 			// set some options
 			DesiredCapabilities dc = DesiredCapabilities.chrome();
-			dc.setCapability(ChromeOptions.CAPABILITY, options);
+			dc.setPlatform(Platform.LINUX);
+			//dc.setCapability(ChromeOptions.CAPABILITY, options);
 			URL url = new URL("http://localhost:4444/wd/hub");
 			WebDriver driver = new RemoteWebDriver(url, dc);
 //			DesiredCapabilities cap=new DesiredCapabilities();
