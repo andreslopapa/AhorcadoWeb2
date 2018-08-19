@@ -129,7 +129,8 @@ public class TestUIAhorcado {
 			
 //			System.setProperty("selenide.browser", "Chrome");
 //			String urlToRemoteWD = "http://localhost:4444/wd/hub";
-			System.setProperty("webdriver.gecko.driver","/home/circleci/repo/geckodriver");
+			//System.setProperty("webdriver.gecko.driver","/home/circleci/repo/geckodriver");
+			System.setProperty("webdriver.gecko.driver","/home/circleci/.m2/repository/webdriver/geckodriver/linux64/0.21.0/geckodriver");
 			System.setProperty("selenide.browser", "chrome");
 //			ChromeDriverManager.getInstance().setup();
 			
