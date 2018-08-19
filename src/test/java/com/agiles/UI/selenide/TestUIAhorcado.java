@@ -140,9 +140,9 @@ public class TestUIAhorcado {
 			//System.setProperty("webdriver.gecko.driver","/Users/jsanchez/Downloads/geckodriver");
 			
 			//System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
-			//System.setProperty("webdriver.chrome.driver","/home/travis/build/andreslopapa/AhorcadoWeb2/chromedriver");
+			System.setProperty("webdriver.chrome.driver","/home/travis/build/andreslopapa/AhorcadoWeb2/chromedriver");
 			//System.setProperty("webdriver.chrome.driver","/home/circleci/repo/chromedriver");
-			System.setProperty("webdriver.chrome.driver","/builds/joacosanchez95/ahorcado-web/chromedriver");
+			//System.setProperty("webdriver.chrome.driver","/builds/joacosanchez95/ahorcado-web/chromedriver");
 			
 			//System.setProperty("webdriver.gecko.driver","/home/circleci/repo/geckodriver");
 			//System.setProperty("webdriver.gecko.driver","/home/travis/build/andreslopapa/AhorcadoWeb2/geckodriver");
