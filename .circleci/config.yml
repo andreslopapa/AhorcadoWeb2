@@ -32,6 +32,8 @@ jobs:
           command: java -jar selenium-server-standalone-3.5.3.jar -log test-reports/selenium.log
           background: true
       - run: curl -O https://github.com/mozilla/geckodriver/releases/download/v0.21.0/geckodriver-v0.21.0-linux64.tar.gz
+      - run: tar xvfz geckodriver-v0.21.0-linux64.tar.gz
+      - run: ls
       #- run: sudo apt-get update
       #- run: sudo apt-get install -y libappindicator1 fonts-liberation libappindicator3-1 libxss1 lsb-release xdg-utils
       #- run: wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
