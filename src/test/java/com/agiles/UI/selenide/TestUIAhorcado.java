@@ -123,7 +123,7 @@ public class TestUIAhorcado {
 			String urlToRemoteWD = "http://localhost:4444/wd/hub";
 			System.setProperty("selenide.browser", "chrome");
 //			ChromeDriverManager.getInstance().setup();
-			System.setProperty("webdriver.chrome.driver","/home/travis/virtualenv/python2.7.12/bin/chromedriver");
+			System.setProperty("webdriver.chrome.driver","/home/travis/virtualenv/chromedriver");
 //			System.setProperty("chromeoptions.args","--no-sandbox"); 
 			Configuration.remote=urlToRemoteWD;
 			
