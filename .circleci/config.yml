@@ -27,7 +27,7 @@ jobs:
           command: java -jar selenium-server-standalone-3.5.3.jar -log test-reports/selenium.log
           background: true
       # run tests!
-      - run: sh -e /etc/init.d/xvfb start
+      - run: xvfb-run make test
       - run: sleep 5
       - run: mvn -e clean test
 
