@@ -132,7 +132,7 @@ public class TestUIAhorcado {
 			
 			//System.setProperty("webdriver.gecko.driver","/home/circleci/.m2/repository/webdriver/geckodriver/linux64/0.21.0/geckodriver");
 			System.setProperty("webdriver.gecko.driver","/home/travis/build/andreslopapa/AhorcadoWeb2/geckodriver");
-			System.setProperty("selenide.browser", "firefox");
+			System.setProperty("selenide.browser", "chrome");
 //			ChromeDriverManager.getInstance().setup();
 			
 //			Configuration.remote=urlToRemoteWD;
