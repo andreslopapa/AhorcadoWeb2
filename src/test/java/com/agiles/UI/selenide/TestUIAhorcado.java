@@ -118,14 +118,14 @@ public class TestUIAhorcado {
 		
 		try{			
 			//FirefoxOptions options = new FirefoxOptions();
-			ChromeOptions options = new ChromeOptions();
+			/* ChromeOptions options = new ChromeOptions();
 			options.setHeadless(true);
 			// set some options
 			DesiredCapabilities dc = DesiredCapabilities.chrome();
 			dc.setPlatform(Platform.LINUX);
 			dc.setCapability(ChromeOptions.CAPABILITY, options);
-			//URL url = new URL("http://localhost:4444/wd/hub");
-			//WebDriver driver = new RemoteWebDriver(url, dc);
+			URL url = new URL("http://localhost:4444/wd/hub");
+			WebDriver driver = new RemoteWebDriver(url, dc); */
 //			DesiredCapabilities cap=new DesiredCapabilities();
 //			cap.setBrowserName("chrome");
 //			cap.setPlatform(Platform.LINUX);
@@ -136,11 +136,11 @@ public class TestUIAhorcado {
 //			System.setProperty("selenide.browser", "Chrome");
 //			String urlToRemoteWD = "http://localhost:4444/wd/hub";
 			
-			//System.setProperty("webdriver.chrome.driver", "/Users/jsanchez/Downloads/chromedriver");
+			System.setProperty("webdriver.chrome.driver", "/Users/jsanchez/Downloads/chromedriver");
 			//System.setProperty("webdriver.gecko.driver","/Users/jsanchez/Downloads/geckodriver");
 			
 			//System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
-			System.setProperty("webdriver.chrome.driver","/home/travis/build/andreslopapa/AhorcadoWeb2/chromedriver");
+			//System.setProperty("webdriver.chrome.driver","/home/travis/build/andreslopapa/AhorcadoWeb2/chromedriver");
 			//System.setProperty("webdriver.chrome.driver","/home/circleci/repo/chromedriver");
 			//System.setProperty("webdriver.chrome.driver","/builds/joacosanchez95/ahorcado-web/chromedriver");
 			
