@@ -19,15 +19,6 @@ jobs:
       MAVEN_OPTS: -Xmx3200m
     
     steps:        
-      - run: #STABLE
-          name: Install Chromedriver latest version
-          command: |
-            sudo apt-get update
-            sudo apt-get install lsb-release libappindicator3-1
-            curl -L -o google-chrome.deb https://dl.google.com/linux/direct/goo$
-            sudo dpkg -i google-chrome.deb
-            sudo sed -i 's|HERE/chrome"|HERE/chrome" --no-sandbox|g' /opt/googl$
-            rm google-chrome.deb
       - checkout
       - run: mkdir test-reports
       # installing packages
@@ -43,25 +34,8 @@ jobs:
           background: true
       - run: wget https://github.com/mozilla/geckodriver/releases/download/v0.21.0/geckodriver-v0.21.0-linux64.tar.gz
       - run: tar xvfz geckodriver-v0.21.0-linux64.tar.gz
-      - run: ls
       #- run: sudo apt-get update
       #- run: sudo apt-get install -y libappindicator1 fonts-liberation libappindicator3-1 libxss1 lsb-release xdg-utils
       #- run: wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
       #- run: sudo dpkg -i google-chrome*.deb
       - run: mvn -e clean test
-
-workflows:
-   version: 2
-   commit:
-     jobs:
-      - build
-   nightly:
-     triggers:
-       - schedule:
-          # 3am UTC
-          cron: "00 03 * * *"
-          filters:
-            branches:
-              only: master
-     jobs:
-       - build

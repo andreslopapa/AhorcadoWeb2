@@ -4,6 +4,7 @@ sudo: required
 env: DISPLAY=':99.0'
 dist: trusty
 addons:
+  chrome: stable
   apt:
     sources:
       - google-chrome
@@ -11,7 +12,13 @@ addons:
       - google-chrome-stable
  
 before_script:
-  - sh -e /etc/init.d/xvfb start
+  #- export CHROME_BIN=/usr/bin/google-chrome
+  #- export DISPLAY=:99.0
+  #- wget http://selenium-release.storage.googleapis.com/2.43/selenium-server-standalone-2.43.1.jar
+  #- java -jar selenium-server-standalone-2.43.1.jar -role hub > /dev/null &
+  #- wget https://github.com/mozilla/geckodriver/releases/download/v0.21.0/geckodriver-v0.21.0-linux64.tar.gz
+  #- tar xvfz geckodriver-v0.21.0-linux64.tar.gz
+  - ls hola/lala.log
 
 script:
-  - mvn test
+  - mvn -e clean test
