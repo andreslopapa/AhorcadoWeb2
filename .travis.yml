@@ -4,7 +4,6 @@ dist: trusty
 
 jdk:
   - oraclejdk8
-  - openjdk8
 
 addons:
   chrome: stable
@@ -28,4 +27,4 @@ before_script:
   #- ls /home/travis/build/andreslopapa/AhorcadoWeb2/chromedriver
 
 script:
-  - mvn clean test
+  - mvn compile
