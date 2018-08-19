@@ -113,12 +113,10 @@ public class TestUIAhorcado {
 	public static void openBrowser(){
 		
 		try{
-			System.setProperty("webdriver.gecko.driver","/home/travis/build/andreslopapa/AhorcadoWeb2/geckodriver");
-			
-			//ChromeOptions options = new ChromeOptions();
-			FirefoxOptions options = new FirefoxOptions();
+			ChromeOptions options = new ChromeOptions();
+			//FirefoxOptions options = new FirefoxOptions();
 			// set some options
-			DesiredCapabilities dc = DesiredCapabilities.firefox();
+			DesiredCapabilities dc = DesiredCapabilities.chrome();
 			dc.setCapability(ChromeOptions.CAPABILITY, options);
 			URL url = new URL("http://localhost:4444/wd/hub");
 			WebDriver driver = new RemoteWebDriver(url, dc);
@@ -133,6 +131,7 @@ public class TestUIAhorcado {
 //			String urlToRemoteWD = "http://localhost:4444/wd/hub";
 			
 			//System.setProperty("webdriver.gecko.driver","/home/circleci/.m2/repository/webdriver/geckodriver/linux64/0.21.0/geckodriver");
+			System.setProperty("webdriver.gecko.driver","/home/travis/build/andreslopapa/AhorcadoWeb2/geckodriver");
 			System.setProperty("selenide.browser", "firefox");
 //			ChromeDriverManager.getInstance().setup();
 			
