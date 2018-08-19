@@ -123,7 +123,7 @@ public class TestUIAhorcado {
 			String urlToRemoteWD = "http://localhost:4444/wd/hub";
 			System.setProperty("selenide.browser", "chrome");
 //			ChromeDriverManager.getInstance().setup();
-			
+			System.setProperty("webdriver.chrome.driver","/AhorcadoWeb/lib/chromedriver");
 			Configuration.remote=urlToRemoteWD;
 			
 //			WebDriver driver =new RemoteWebDriver(new URL(urlToRemoteWD),options);
@@ -132,7 +132,7 @@ public class TestUIAhorcado {
 		    Selenide.clearBrowserCookies();
 			
 			
-//		System.setProperty("webdriver.chrome.driver","/home/lopa/Descargas/chromedriver");
+		
 //		System.setProperty("selenide.browser", "Chrome");
 		
 		
