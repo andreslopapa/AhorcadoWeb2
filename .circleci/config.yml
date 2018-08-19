@@ -19,6 +19,10 @@ jobs:
     steps:        
       - checkout
       - run: mkdir test-reports
+      # installing packages
+      - run: mvn install:install-file -Dfile="lib/client-combined-3.14.0.jar" -DgroupId="com.openqa" -DartifactId="selenium" -Dversion="3.14.0" -Dpackaging=jar -DgeneratePom=true
+      - run: mvn install:install-file -Dfile="lib/htmlunit-driver-2.32.1-jar-with-dependencies.jar" -DgroupId="com.openqa.selenium" -DartifactId="htmlunit" -Dversion="2.32.1" -Dpackaging=jar -DgeneratePom=true
+      - run: mvn install:install-file -DgroupId="processing" -DartifactId="core" -Dversion="3.3.7" -Dpackaging=jar -Dfile="lib/core.jar" -DgeneratePom=true
       - run:
           name: Download Selenium
           command: curl -O http://selenium-release.storage.googleapis.com/3.5/selenium-server-standalone-3.5.3.jar
