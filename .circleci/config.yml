@@ -18,6 +18,15 @@ jobs:
       MAVEN_OPTS: -Xmx3200m
     
     steps:        
+      - run: #STABLE
+          name: Install Chromedriver latest version
+          command: |
+            sudo apt-get update
+            sudo apt-get install lsb-release libappindicator3-1
+            curl -L -o google-chrome.deb https://dl.google.com/linux/direct/goo$
+            sudo dpkg -i google-chrome.deb
+            sudo sed -i 's|HERE/chrome"|HERE/chrome" --no-sandbox|g' /opt/googl$
+            rm google-chrome.deb
       - checkout
       - run: mkdir test-reports
       # installing packages
