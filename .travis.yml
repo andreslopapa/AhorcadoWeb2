@@ -11,7 +11,7 @@ addons:
       - google-chrome-stable
  
 before_script:
-  #- export CHROME_BIN=/usr/bin/google-chrome
+  - export CHROME_BIN=/usr/bin/google-chrome
   - export DISPLAY=:99.0
   - curl -O http://selenium-release.storage.googleapis.com/3.5/selenium-server-standalone-3.5.3.jar
   - java -jar selenium-server-standalone-3.5.3.jar &
@@ -20,6 +20,7 @@ before_script:
   - wget https://github.com/mozilla/geckodriver/releases/download/v0.21.0/geckodriver-v0.21.0-linux64.tar.gz
   - tar xvfz geckodriver-v0.21.0-linux64.tar.gz
   - ls /home/travis/build/andreslopapa/AhorcadoWeb2/geckodriver
+  - ls /usr/bin/google-chrome
 
 script:
   - jdk_switcher use oraclejdk8
