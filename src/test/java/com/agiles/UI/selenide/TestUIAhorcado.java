@@ -113,6 +113,7 @@ public class TestUIAhorcado {
 		
 		try{
 			ChromeOptions options = new ChromeOptions();
+			//FirefoxOptions options = new FirefoxOptions();
 			// set some options
 			DesiredCapabilities dc = DesiredCapabilities.chrome();
 			dc.setCapability(ChromeOptions.CAPABILITY, options);
