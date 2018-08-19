@@ -117,7 +117,7 @@ public class TestUIAhorcado {
 			// set some options
 			DesiredCapabilities dc = DesiredCapabilities.chrome();
 			dc.setCapability(ChromeOptions.CAPABILITY, options);
-			URL url = new URL("http://localhost:8080/wd/hub");
+			URL url = new URL("http://localhost:4444/wd/hub");
 			WebDriver driver = new RemoteWebDriver(url, dc);
 //			DesiredCapabilities cap=new DesiredCapabilities();
 //			cap.setBrowserName("chrome");
