@@ -17,12 +17,13 @@ before_script:
   - java -jar selenium-server-standalone-3.5.3.jar &
   - sh -e /etc/init.d/xvfb start
   - sleep 3
+  - sudo apt-get install -y libappindicator1 fonts-liberation
   #- wget https://github.com/mozilla/geckodriver/releases/download/v0.21.0/geckodriver-v0.21.0-linux64.tar.gz
   #- tar xvfz geckodriver-v0.21.0-linux64.tar.gz
   #- ls /home/travis/build/andreslopapa/AhorcadoWeb2/geckodriver
-  #- wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
-  #- unzip chromedriver_linux64.zip
-  - ls /usr/bin/google-chrome
+  - wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
+  - unzip chromedriver_linux64.zip
+  - ls /home/travis/build/andreslopapa/AhorcadoWeb2/chromedriver
 
 script:
   - jdk_switcher use oraclejdk8
