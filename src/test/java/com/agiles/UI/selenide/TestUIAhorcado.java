@@ -51,7 +51,7 @@ public class TestUIAhorcado {
 		 $(".ganador-section").shouldNot(exist);
 		 $(".perdedor-section").shouldNot(exist);
 		 $(".hangman").isImage();
-		 assertEquals("[http://ahorcadoweb.jelastic.saveincloud.net/]images/playhangman1.png", $(".hangman").getAttribute("src"));
+		 assertEquals("[[http://ahorcadoweb.jelastic.saveincloud.net/]]images/playhangman1.png", $(".hangman").getAttribute("src"));
 		 //$(".hangman").shouldHave(attribute("src","images/playhangman1.png"));
 	}
 	
@@ -70,7 +70,7 @@ public class TestUIAhorcado {
 		 $(".ganador-tit").shouldHave(text("Te Salvaste Perro!"));
 		 $(".perdedor-section").shouldNot(exist);
 		 $(".hangman").isImage();
-		 assertEquals("[http://ahorcadoweb.jelastic.saveincloud.net/]images/playhangman1.png", $(".hangman").getAttribute("src"));
+		 assertEquals("[[http://ahorcadoweb.jelastic.saveincloud.net/]]images/playhangman1.png", $(".hangman").getAttribute("src"));
 		 //$(".hangman").shouldHave(attribute("src","images/playhangman1.png"));
 	}
 	
@@ -91,7 +91,7 @@ public class TestUIAhorcado {
 		 $(".perdedor-tit").shouldHave(text("Perdiste Perro!"));
 		 $(".palabraera").shouldHave(text("La palabra era: hola"));
 		 $(".hangman").isImage();
-		 assertEquals("[http://ahorcadoweb.jelastic.saveincloud.net/]images/playhangman6.png", $(".hangman").getAttribute("src"));
+		 assertEquals("[[http://ahorcadoweb.jelastic.saveincloud.net/]]images/playhangman6.png", $(".hangman").getAttribute("src"));
 		 //$(".hangman").shouldHave(attribute("src","images/playhangman6.png"));
 	}
 	
@@ -110,7 +110,7 @@ public class TestUIAhorcado {
 		 $(".ganador-tit").shouldHave(text("Te Salvaste Perro!"));
 		 $(".perdedor-section").shouldNot(exist);
 		 $(".hangman").isImage();
-		 assertEquals("[http://ahorcadoweb.jelastic.saveincloud.net/]images/playhangman2.png", $(".hangman").getAttribute("src"));
+		 assertEquals("[[http://ahorcadoweb.jelastic.saveincloud.net/]]images/playhangman2.png", $(".hangman").getAttribute("src"));
 		 //$(".hangman").shouldHave(attribute("src","images/playhangman2.png"));
 	
 	}
