@@ -1,7 +1,7 @@
 package com.agiles.UI.selenide;
 
+import org.junit.Assert;
 import org.junit.Test;
-import static org.junit.Assert.*;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
@@ -11,18 +11,7 @@ import static com.codeborne.selenide.Condition.*;
 
 
 public class TestUIAhorcado {
-	
-//	@Before
-//	public static void setupClass() {
-//		openBrowser();
-////	    ChromeDriverManager.getInstance().setup();
-//	}
-	
-//	@After
-//	public static void close(){
-//		WebDriverRunner.closeWebDriver();
-//		WebDriverRunner.getWebDriver().quit();
-//	}
+
 	
 	@Test
 	public void ingresarUnaSolaLetra() {
@@ -35,7 +24,7 @@ public class TestUIAhorcado {
 		 $(".ganador-section").shouldNot(exist);
 		 $(".perdedor-section").shouldNot(exist);
 		 $(".hangman").isImage();
-		 assertEquals("http://ahorcadoweb.jelastic.saveincloud.net/images/playhangman1.png", $(".hangman").getAttribute("src"));
+		 Assert.assertTrue($(".hangman").getAttribute("src").matches(".*/images/playhangman1.png"));
 		 
 	}
 	
@@ -54,7 +43,7 @@ public class TestUIAhorcado {
 		 $(".ganador-tit").shouldHave(text("Te Salvaste!"));
 		 $(".perdedor-section").shouldNot(exist);
 		 $(".hangman").isImage();
-		 assertEquals("http://ahorcadoweb.jelastic.saveincloud.net/images/playhangman1.png", $(".hangman").getAttribute("src"));
+		 Assert.assertTrue($(".hangman").getAttribute("src").matches(".*/images/playhangman1.png"));
 		 
 	}
 	
@@ -75,7 +64,7 @@ public class TestUIAhorcado {
 		 $(".perdedor-tit").shouldHave(text("Perdiste!"));
 		 $(".palabraera").shouldHave(text("La palabra era: hola"));
 		 $(".hangman").isImage();
-		 assertEquals("http://ahorcadoweb.jelastic.saveincloud.net/images/playhangman6.png", $(".hangman").getAttribute("src"));
+		 Assert.assertTrue($(".hangman").getAttribute("src").matches(".*/images/playhangman6.png"));
 		 
 	}
 	
@@ -94,7 +83,7 @@ public class TestUIAhorcado {
 		 $(".ganador-tit").shouldHave(text("Te Salvaste!"));
 		 $(".perdedor-section").shouldNot(exist);
 		 $(".hangman").isImage();
-		 assertEquals("http://ahorcadoweb.jelastic.saveincloud.net/images/playhangman2.png", $(".hangman").getAttribute("src"));
+		 Assert.assertTrue($(".hangman").getAttribute("src").matches(".*/images/playhangman2.png"));
 		 
 	
 	}
@@ -103,13 +92,20 @@ public class TestUIAhorcado {
 	
 	public static void openBrowser(){
 		try {
-			String urlToRemoteWD = "http://localhost:4444/wd/hub";
 			System.setProperty("selenide.browser", "chrome");
-			System.setProperty("webdriver.chrome.driver","/home/travis/virtualenv/chromedriver");
-			Configuration.remote=urlToRemoteWD;
-			WebDriverRunner.getWebDriver().manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
-			open("http://ahorcadoweb.jelastic.saveincloud.net/index.jsp");
-		    Selenide.clearBrowserCookies();
+			WebDriverRunner.clearBrowserCache();
+
+			if(!System.getProperty("user.name").toLowerCase().equals("travis")) {
+				open("http://localhost:8080/AhorcadoWeb/");
+			} else {
+				String urlToRemoteWD = "http://localhost:4444/wd/hub";
+				System.setProperty("webdriver.chrome.driver","/home/travis/virtualenv/chromedriver");
+				Configuration.remote=urlToRemoteWD;
+				WebDriverRunner.getWebDriver().manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+				open("http://ahorcadoweb.jelastic.saveincloud.net/index.jsp");
+			}
+
+			Selenide.clearBrowserCookies();
 		} catch(Exception ex) {
 			System.out.println(ex);
 		}

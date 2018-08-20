@@ -5,6 +5,8 @@ import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 
+import org.junit.Assert;
+
 import cucumber.api.java.en.Then;
 
 public class LoseTheGameStepDefinitions {
@@ -16,7 +18,7 @@ public class LoseTheGameStepDefinitions {
 
 	@Then("^the hanged man should appear in the image$")
 	public void the_hanged_man_should_appear_in_the_image() throws Throwable {
-		$(".hangman").shouldHave(attribute("src","http://ahorcadoweb.jelastic.saveincloud.net/images/playhangman6.png"));
+		Assert.assertTrue($(".hangman").getAttribute("src").matches(".*/images/playhangman6.png"));
 	}
 
 	@Then("^a message saying the correct word should appear$")
