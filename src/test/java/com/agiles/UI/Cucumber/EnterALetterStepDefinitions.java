@@ -33,11 +33,11 @@ public class EnterALetterStepDefinitions {
 	
 	@Then("^the hanged man should not appear in the image$")
 	public void the_hanged_man_should_not_appear_in_the_image() throws Throwable {
-		$(".hangman").shouldHave(attribute("src","images/playhangman1.png"));
+		$(".hangman").shouldHave(attribute("src","http://ahorcadoweb.jelastic.saveincloud.net/images/playhangman1.png"));
 	}
 
 	@Then("^the head of the hanged man should appear in the image$")
 	public void the_head_of_the_hanged_man_should_appear_in_the_image() throws Throwable {
-		$(".hangman").shouldHave(attribute("src","images/playhangman2.png"));
+		$(".hangman").shouldHave(attribute("src","http://ahorcadoweb.jelastic.saveincloud.net/images/playhangman2.png"));
 	}
 }

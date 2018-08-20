@@ -15,7 +15,7 @@ public class LoseTheGameStepDefinitions {
 
 	@Then("^the hanged man should appear in the image$")
 	public void the_hanged_man_should_appear_in_the_image() throws Throwable {
-		$(".hangman").shouldHave(attribute("src","images/playhangman6.png"));
+		$(".hangman").shouldHave(attribute("src","http://ahorcadoweb.jelastic.saveincloud.net/images/playhangman6.png"));
 	}
 
 	@Then("^a message saying the correct word should appear$")
