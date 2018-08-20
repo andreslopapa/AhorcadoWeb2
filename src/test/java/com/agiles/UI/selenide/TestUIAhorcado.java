@@ -133,7 +133,7 @@ public class TestUIAhorcado {
 			open("/AhorcadoWeb/index.jsp");
 //			open("http://www.google.com/");
 		    Selenide.clearBrowserCookies();
-		    System.out.println(getWebDriver().getPageSource());
+		    System.out.println(getWebDriver().getCurrentUrl());
 //		    if(!($("#letterh").exists() && $("#letterh").isDisplayed())){
 //				Thread.sleep(30000);
 //		    }
