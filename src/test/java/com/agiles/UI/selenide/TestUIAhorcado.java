@@ -1,28 +1,12 @@
 package com.agiles.UI.selenide;
 
 import org.junit.Test;
-import org.openqa.selenium.Platform;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.junit.Assert.*;
-
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
-
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
-import junit.framework.Assert;
-
 import static com.codeborne.selenide.Selenide.*;
-
-import java.net.URL;
 import java.util.concurrent.TimeUnit;
-
 import static com.codeborne.selenide.Condition.*;
 
 
@@ -52,7 +36,7 @@ public class TestUIAhorcado {
 		 $(".perdedor-section").shouldNot(exist);
 		 $(".hangman").isImage();
 		 assertEquals("http://ahorcadoweb.jelastic.saveincloud.net/images/playhangman1.png", $(".hangman").getAttribute("src"));
-		 //$(".hangman").shouldHave(attribute("src","images/playhangman1.png"));
+		 
 	}
 	
 	@Test
@@ -71,7 +55,7 @@ public class TestUIAhorcado {
 		 $(".perdedor-section").shouldNot(exist);
 		 $(".hangman").isImage();
 		 assertEquals("http://ahorcadoweb.jelastic.saveincloud.net/images/playhangman1.png", $(".hangman").getAttribute("src"));
-		 //$(".hangman").shouldHave(attribute("src","images/playhangman1.png"));
+		 
 	}
 	
 	@Test
@@ -92,7 +76,7 @@ public class TestUIAhorcado {
 		 $(".palabraera").shouldHave(text("La palabra era: hola"));
 		 $(".hangman").isImage();
 		 assertEquals("http://ahorcadoweb.jelastic.saveincloud.net/images/playhangman6.png", $(".hangman").getAttribute("src"));
-		 //$(".hangman").shouldHave(attribute("src","images/playhangman6.png"));
+		 
 	}
 	
 	@Test
@@ -111,7 +95,7 @@ public class TestUIAhorcado {
 		 $(".perdedor-section").shouldNot(exist);
 		 $(".hangman").isImage();
 		 assertEquals("http://ahorcadoweb.jelastic.saveincloud.net/images/playhangman2.png", $(".hangman").getAttribute("src"));
-		 //$(".hangman").shouldHave(attribute("src","images/playhangman2.png"));
+		 
 	
 	}
 	
@@ -120,46 +104,15 @@ public class TestUIAhorcado {
 	public static void openBrowser(){
 		
 		try{
-//			DesiredCapabilities cap=new DesiredCapabilities();
-//			cap.setBrowserName("chrome");
-//			cap.setPlatform(Platform.LINUX);
-//			
-//			ChromeOptions options=new ChromeOptions();
-//			options.merge(cap);
-			
-//			System.setProperty("selenide.browser", "Chrome");
+
 			String urlToRemoteWD = "http://localhost:4444/wd/hub";
 			System.setProperty("selenide.browser", "chrome");
-//			ChromeDriverManager.getInstance().setup();
 			System.setProperty("webdriver.chrome.driver","/home/travis/virtualenv/chromedriver");
-//			System.setProperty("chromeoptions.args","--no-sandbox"); 
 			Configuration.remote=urlToRemoteWD;
-			
-//			WebDriver driver =new RemoteWebDriver(new URL(urlToRemoteWD),options);
-//			WebDriverRunner.setWebDriver(driver);
-//			open("http://localhost:4444/AhorcadoWeb/index.jsp");
 			WebDriverRunner.getWebDriver().manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 			open("http://ahorcadoweb.jelastic.saveincloud.net/index.jsp");
-//			open("http://www.google.com/");
 		    Selenide.clearBrowserCookies();
-		    System.out.println(getWebDriver().getCurrentUrl());
-//		    if(!($("#letterh").exists() && $("#letterh").isDisplayed())){
-//				Thread.sleep(30000);
-//		    }
-			
-		
-//		System.setProperty("selenide.browser", "Chrome");
-		
-		
-		
-//		WebDriverRunner.getWebDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); 
-//		SeleniumServer _server = new SeleniumServer(); 
-//		_server.boot(); 
-//		_server.start();
-//	    open("http://localhost:4444/wd/hub/AhorcadoWeb/index.jsp");
-		
-	    /*when you launch selenium it creates a 
-	     * temporary profile and when you close it,selenium deletes it*/}
+		}
 		catch(Exception ex){
 			System.out.println(ex);
 		}
