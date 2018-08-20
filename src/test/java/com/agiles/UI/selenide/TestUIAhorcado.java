@@ -131,7 +131,7 @@ public class TestUIAhorcado {
 //			WebDriver driver =new RemoteWebDriver(new URL(urlToRemoteWD),options);
 //			WebDriverRunner.setWebDriver(driver);
 //			open("http://localhost:4444/AhorcadoWeb/index.jsp");
-			WebDriverRunner.getWebDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			WebDriverRunner.getWebDriver().manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 			open("http://ahorcadoweb.jelastic.saveincloud.net/index.jsp");
 //			open("http://www.google.com/");
 		    Selenide.clearBrowserCookies();
