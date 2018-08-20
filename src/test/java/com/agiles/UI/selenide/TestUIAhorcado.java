@@ -130,7 +130,8 @@ public class TestUIAhorcado {
 //			WebDriver driver =new RemoteWebDriver(new URL(urlToRemoteWD),options);
 //			WebDriverRunner.setWebDriver(driver);
 //			open("http://localhost:4444/AhorcadoWeb/index.jsp");
-			open("http://www.google.com/");
+			open("/AhorcadoWeb/index.jsp");
+//			open("http://www.google.com/");
 		    Selenide.clearBrowserCookies();
 		    System.out.println(getWebDriver().getPageSource());
 //		    if(!($("#letterh").exists() && $("#letterh").isDisplayed())){
