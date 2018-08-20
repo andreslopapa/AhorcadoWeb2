@@ -96,7 +96,7 @@ public class TestUIAhorcado {
 
 			System.setProperty("selenide.browser", "chrome");
 			WebDriverRunner.clearBrowserCache();
-			if(System.getProperty("user.name").toLowerCase().equals("travis")){
+			if(!System.getProperty("user.name").toLowerCase().equals("travis")){
 				open("http://localhost:8080/AhorcadoWeb/");
 			}
 			else{
