@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
@@ -131,7 +131,10 @@ public class TestUIAhorcado {
 //			WebDriverRunner.setWebDriver(driver);
 			open("http://localhost:4444/AhorcadoWeb/index.jsp");
 		    Selenide.clearBrowserCookies();
-			Thread.sleep(30000);
+		    System.out.println(getWebDriver().getPageSource());
+//		    if(!($("#letterh").exists() && $("#letterh").isDisplayed())){
+//				Thread.sleep(30000);
+//		    }
 			
 		
 //		System.setProperty("selenide.browser", "Chrome");
