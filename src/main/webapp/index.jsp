@@ -18,7 +18,7 @@
 		<%if(request.getAttribute("ganador")!=null && (Boolean)request.getAttribute("ganador")==true){ %>
 		<div class="ganador-section">
 			<h1 class="ganador-tit">
-			Te salvaste Perro!
+			Te salvaste!
 			<br>
 			<br>
 			</h1>
@@ -26,7 +26,7 @@
 		<%}else if(request.getAttribute("perdedor")!=null && (Boolean)request.getAttribute("perdedor")==true){ %>
 		<div class="perdedor-section">
 			<h1 class="perdedor-tit">
-			Perdiste Perro!
+			Perdiste!
 			</h1>
 			<br>
 			<span class="palabraera">La palabra era:<%=" "+request.getAttribute("palabraera") %></span>
