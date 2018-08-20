@@ -7,6 +7,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+import static org.junit.Assert.*;
+
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
@@ -14,6 +16,7 @@ import com.codeborne.selenide.WebDriverRunner;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
+import junit.framework.Assert;
 
 import static com.codeborne.selenide.Selenide.*;
 
@@ -48,7 +51,8 @@ public class TestUIAhorcado {
 		 $(".ganador-section").shouldNot(exist);
 		 $(".perdedor-section").shouldNot(exist);
 		 $(".hangman").isImage();
-		 $(".hangman").shouldHave(attribute("src","images/playhangman1.png"));
+		 assertEquals("images/playhangman1.png", $(".hangman").getAttribute("src"));
+		 //$(".hangman").shouldHave(attribute("src","images/playhangman1.png"));
 	}
 	
 	@Test
@@ -66,7 +70,8 @@ public class TestUIAhorcado {
 		 $(".ganador-tit").shouldHave(text("Te Salvaste Perro!"));
 		 $(".perdedor-section").shouldNot(exist);
 		 $(".hangman").isImage();
-		 $(".hangman").shouldHave(attribute("src","images/playhangman1.png"));
+		 assertEquals("images/playhangman1.png", $(".hangman").getAttribute("src"));
+		 //$(".hangman").shouldHave(attribute("src","images/playhangman1.png"));
 	}
 	
 	@Test
@@ -86,7 +91,8 @@ public class TestUIAhorcado {
 		 $(".perdedor-tit").shouldHave(text("Perdiste Perro!"));
 		 $(".palabraera").shouldHave(text("La palabra era: hola"));
 		 $(".hangman").isImage();
-		 $(".hangman").shouldHave(attribute("src","images/playhangman6.png"));
+		 assertEquals("images/playhangman6.png", $(".hangman").getAttribute("src"));
+		 //$(".hangman").shouldHave(attribute("src","images/playhangman6.png"));
 	}
 	
 	@Test
@@ -104,7 +110,8 @@ public class TestUIAhorcado {
 		 $(".ganador-tit").shouldHave(text("Te Salvaste Perro!"));
 		 $(".perdedor-section").shouldNot(exist);
 		 $(".hangman").isImage();
-		 $(".hangman").shouldHave(attribute("src","images/playhangman2.png"));
+		 assertEquals("images/playhangman2.png", $(".hangman").getAttribute("src"));
+		 //$(".hangman").shouldHave(attribute("src","images/playhangman2.png"));
 	
 	}
 	
