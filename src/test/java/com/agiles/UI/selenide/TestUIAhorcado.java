@@ -96,19 +96,18 @@ public class TestUIAhorcado {
 
 			System.setProperty("selenide.browser", "chrome");
 			WebDriverRunner.clearBrowserCache();
-			try{
+			if(System.getProperty("user.name").toLowerCase().equals("travis")){
 				open("http://localhost:8080/AhorcadoWeb/");
 			}
-			catch(Exception ex){
+			else{
 				String urlToRemoteWD = "http://localhost:4444/wd/hub";
 				System.setProperty("webdriver.chrome.driver","/home/travis/virtualenv/chromedriver");
 				Configuration.remote=urlToRemoteWD;
 				WebDriverRunner.getWebDriver().manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 				open("http://ahorcadoweb.jelastic.saveincloud.net/index.jsp");
 			}
-			finally{
-				Selenide.clearBrowserCookies();
-			}
+			Selenide.clearBrowserCookies();
+			
 			
 		    
 		}
