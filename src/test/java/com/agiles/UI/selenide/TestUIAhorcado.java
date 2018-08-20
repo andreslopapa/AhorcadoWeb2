@@ -18,6 +18,7 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
 import static com.codeborne.selenide.Selenide.*;
 
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Condition.*;
 
@@ -130,6 +131,7 @@ public class TestUIAhorcado {
 //			WebDriver driver =new RemoteWebDriver(new URL(urlToRemoteWD),options);
 //			WebDriverRunner.setWebDriver(driver);
 //			open("http://localhost:4444/AhorcadoWeb/index.jsp");
+			WebDriverRunner.getWebDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			open("http://ahorcadoweb.jelastic.saveincloud.net/index.jsp");
 //			open("http://www.google.com/");
 		    Selenide.clearBrowserCookies();
