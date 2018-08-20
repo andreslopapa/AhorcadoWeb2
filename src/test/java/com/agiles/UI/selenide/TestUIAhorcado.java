@@ -47,7 +47,7 @@ public class TestUIAhorcado {
 		 $(".ganador-section").shouldNot(exist);
 		 $(".perdedor-section").shouldNot(exist);
 		 $(".hangman").isImage();
-		 $(".hangman").shouldHave(attribute("src","http://localhost:8080/AhorcadoWeb/images/playhangman1.png"));
+		 $(".hangman").shouldHave(attribute("src","images/playhangman1.png"));
 	}
 	
 	@Test
@@ -65,7 +65,7 @@ public class TestUIAhorcado {
 		 $(".ganador-tit").shouldHave(text("Te Salvaste Perro!"));
 		 $(".perdedor-section").shouldNot(exist);
 		 $(".hangman").isImage();
-		 $(".hangman").shouldHave(attribute("src","http://localhost:8080/AhorcadoWeb/images/playhangman1.png"));
+		 $(".hangman").shouldHave(attribute("src","images/playhangman1.png"));
 	}
 	
 	@Test
@@ -85,7 +85,7 @@ public class TestUIAhorcado {
 		 $(".perdedor-tit").shouldHave(text("Perdiste Perro!"));
 		 $(".palabraera").shouldHave(text("La palabra era: hola"));
 		 $(".hangman").isImage();
-		 $(".hangman").shouldHave(attribute("src","http://localhost:8080/AhorcadoWeb/images/playhangman6.png"));
+		 $(".hangman").shouldHave(attribute("src","images/playhangman6.png"));
 	}
 	
 	@Test
@@ -103,7 +103,7 @@ public class TestUIAhorcado {
 		 $(".ganador-tit").shouldHave(text("Te Salvaste Perro!"));
 		 $(".perdedor-section").shouldNot(exist);
 		 $(".hangman").isImage();
-		 $(".hangman").shouldHave(attribute("src","http://localhost:8080/AhorcadoWeb/images/playhangman2.png"));
+		 $(".hangman").shouldHave(attribute("src","images/playhangman2.png"));
 	
 	}
 	
