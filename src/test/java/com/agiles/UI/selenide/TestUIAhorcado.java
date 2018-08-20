@@ -131,7 +131,7 @@ public class TestUIAhorcado {
 //			WebDriverRunner.setWebDriver(driver);
 			open("http://localhost:4444/AhorcadoWeb/index.jsp");
 		    Selenide.clearBrowserCookies();
-			
+			Thread.sleep(30000);
 			
 		
 //		System.setProperty("selenide.browser", "Chrome");
